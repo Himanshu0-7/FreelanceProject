@@ -37,7 +37,15 @@ export default function Hero() {
         <img
           ref={imgRef}
           src={HeroImage}
-          className="absolute right-[-150px] top-1/2 -translate-y-1/2 w-[700px] origin-center"
+          className="
+    absolute 
+   right-0 translate-x-1/5
+    top-1/2 
+    -translate-y-1/2 
+    translate-x-1/3
+    w-[50vw] max-w-[700px]
+    origin-center
+  "
         />
         <section className="pl-20">
           <div className="max-w-xl text-white">
