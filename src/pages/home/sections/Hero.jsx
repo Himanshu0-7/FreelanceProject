@@ -42,7 +42,7 @@ export default function Hero() {
     right-0
     top-1/2 
     -translate-y-1/2 
-    translate-x-1/5
+    translate-x-1/4
     w-[50vw] max-w-[700px]
     origin-center
   "
