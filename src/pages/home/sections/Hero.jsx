@@ -23,13 +23,13 @@ export default function Hero() {
     tl.set(obj, { count: 0 });
     tl.set(textRef.current, { textContent: "" });
 
-    // gsap.to(imgRef.current, {
-    //   rotate: -360,
-    //   transformOrigin: "50% 50%",
-    //   duration: 40,
-    //   ease: "none",
-    //   repeat: -1,
-    // });
+    gsap.set(imgRef.current, { yPercent: -50 });
+    gsap.to(imgRef.current, {
+      rotation: -360,
+      duration: 40,
+      ease: "none",
+      repeat: -1,
+    });
   }, []);
   return (
     <>
@@ -37,15 +37,7 @@ export default function Hero() {
         <img
           ref={imgRef}
           src={HeroImage}
-          className="
-    absolute 
-   right-0 
-    top-1/2 
-    -translate-y-1/2 
-    translate-x-1/4
-    w-[50vw] max-w-[800px]
-    origin-center
-  "
+          className="absolute right-0 top-1/2 w-[50vw] max-w-[800px] origin-center"
         />
         <section className="pl-20">
           <div className="max-w-xl text-white">
