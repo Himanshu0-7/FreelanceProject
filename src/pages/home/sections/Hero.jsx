@@ -23,13 +23,13 @@ export default function Hero() {
     tl.set(obj, { count: 0 });
     tl.set(textRef.current, { textContent: "" });
 
-    gsap.to(imgRef.current, {
-      rotate: -360,
-      transformOrigin: "50% 50%",
-      duration: 40,
-      ease: "none",
-      repeat: -1,
-    });
+    // gsap.to(imgRef.current, {
+    //   rotate: -360,
+    //   transformOrigin: "50% 50%",
+    //   duration: 40,
+    //   ease: "none",
+    //   repeat: -1,
+    // });
   }, []);
   return (
     <>
