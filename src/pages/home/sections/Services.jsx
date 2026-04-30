@@ -1,3 +1,4 @@
+import Background from "../../../assets/Background.png";
 export default function Services() {
   const services = [
     {
@@ -14,13 +15,16 @@ export default function Services() {
     },
   ];
   return (
-    <section className="w-full min-h-screen bg-[#01050e] flex flex-col items-center py-20">
-      {/* Title */}
+    <section className="relative w-full min-h-screen   bg-[linear-gradient(270deg,rgba(0,0,0,1)_0%,rgba(9,25,71,1)_100%)] flex flex-col items-center py-20">
+      <img
+        src={Background}
+        alt=""
+        className="absolute inset-0 w-full h-full object-cover opacity-20 z-0 pointer-events-none"
+      />
       <h1 className="text-4xl md:text-5xl font-semibold text-center text-white">
         Our <span className="text-blue-400">Services</span>
       </h1>
 
-      {/* Description */}
       <p className="text-gray-300 text-center max-w-3xl mt-4">
         Our services are built to support digital transformation and long-term
         success. We provide expert consulting, scalable technology solutions,
@@ -50,9 +54,17 @@ export default function Services() {
           </div>
         ))}
       </div>
-      {/* Button */}
-      <button className="mt-16 bg-blue-600 px-8 py-3 rounded-full text-white hover:bg-blue-500 transition">
-        Hire Us Today →
+      <button className="relative mt-16 px-10 py-4 rounded-full overflow-hidden">
+        {/* Gradient background */}
+        <span
+          className="absolute inset-0 
+        bg-[linear-gradient(90deg,rgba(11,37,110,1)_0%,rgba(7,113,186,1)_100%)]"
+        ></span>
+
+        {/* Content */}
+        <span className="relative z-10 text-white font-semibold flex items-center gap-2">
+          Hire Us Today →
+        </span>
       </button>
     </section>
   );

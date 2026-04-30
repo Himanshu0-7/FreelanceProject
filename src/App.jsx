@@ -7,7 +7,7 @@ import Services from "./pages/services";
 import Blogs from "./pages/blogs";
 import Contact from "./pages/contact";
 import Industires from "./pages/industries";
-
+import Footer from "./components/layout/Footer";
 function App() {
   return (
     <>
@@ -21,6 +21,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/industries" element={<Industires />} />
       </Routes>
+      <Footer />
     </>
   );
 }

@@ -1,3 +1,9 @@
+import Introduction from "./sections/Introduction";
+
 export default function index() {
-  return <></>;
+  return (
+    <>
+      <Introduction />
+    </>
+  );
 }
