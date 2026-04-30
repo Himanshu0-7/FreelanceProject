@@ -39,10 +39,10 @@ export default function Hero() {
           src={HeroImage}
           className="
     absolute 
-   right-0 translate-x-1/5
+    right-0
     top-1/2 
     -translate-y-1/2 
-    translate-x-1/3
+    translate-x-1/5
     w-[50vw] max-w-[700px]
     origin-center
   "
