@@ -39,7 +39,7 @@ export default function Hero() {
           src={HeroImage}
           className="
     absolute 
-    right-0
+   right-0 
     top-1/2 
     -translate-y-1/2 
     translate-x-1/4
