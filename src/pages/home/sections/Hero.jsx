@@ -43,7 +43,7 @@ export default function Hero() {
     top-1/2 
     -translate-y-1/2 
     translate-x-1/4
-    w-[50vw] max-w-[700px]
+    w-[50vw] max-w-[800px]
     origin-center
   "
         />
@@ -52,7 +52,7 @@ export default function Hero() {
             <p className="font-semibold text-2xl text-[#42b9f4] mb-2">
               #1 in the Consultancy
             </p>
-            <h1 className="text-6xl font-bold text-white leading-tight">
+            <h1 className="text-7xl font-bold text-white leading-tight">
               <span className="block whitespace-nowrap">
                 Innovative IT Consulting For
               </span>{" "}
