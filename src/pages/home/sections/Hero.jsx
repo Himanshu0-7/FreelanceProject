@@ -25,9 +25,10 @@ export default function Hero() {
 
     gsap.to(imgRef.current, {
       rotate: -360,
-      duration: 40, // speed (increase = slower)
-      ease: "none", // constant speed
-      repeat: -1, // infinite loop
+      transformOrigin: "50% 50%",
+      duration: 40,
+      ease: "none",
+      repeat: -1,
     });
   }, []);
   return (
@@ -36,7 +37,7 @@ export default function Hero() {
         <img
           ref={imgRef}
           src={HeroImage}
-          className="absolute right-[-150px] top-1/2 -translate-y-1/2 w-[700px]"
+          className="absolute right-[-150px] top-1/2 -translate-y-1/2 w-[700px] origin-center"
         />
         <section className="pl-20">
           <div className="max-w-xl text-white">
