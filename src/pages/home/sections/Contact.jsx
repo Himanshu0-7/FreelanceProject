@@ -1,9 +1,24 @@
 import Perspective from "../../../assets/Perspective-Grid.svg";
+import locationIcon from "../../../assets/locationIcon.svg";
+import phoneIcon from "../../../assets/phoneIcon.svg";
+import mailIcon from "../../../assets/mailIcon.svg";
 export default function Contact() {
   const cards = [
-    { title: "Our Main Office", desc: "abc Street,B-Block,2nd floor" },
-    { title: "Phone Number", desc: "+91 1111 0000 22" },
-    { title: "E-mail", desc: "abc@gmail.com" },
+    {
+      title: "Our Main Office",
+      desc: "abc Street,B-Block,2nd floor",
+      icon: locationIcon,
+    },
+    {
+      title: "Phone Number",
+      desc: "+91 1111 0000 22",
+      icon: phoneIcon,
+    },
+    {
+      title: "E-mail",
+      desc: "abc@gmail.com",
+      icon: mailIcon,
+    },
   ];
 
   return (
@@ -11,7 +26,7 @@ export default function Contact() {
       <img
         src={Perspective}
         alt=""
-        className="absolute left-0 top-0 h-full w-1/2 object-cover opacity-60 pointer-events-none"
+        className="absolute left-0 top-0 h-full w-1/2 object-cover opacity-40 pointer-events-none"
       />
       <h1 className="text-4xl font-semibold text-white text-center">
         <span className="text-blue-400">Contact US</span>
@@ -32,7 +47,11 @@ export default function Contact() {
               key={i}
               className="bg-[#0b1220] w-full h-[180px] rounded-2xl flex flex-col items-center justify-center text-center p-4"
             >
-              <div className="text-blue-400 text-3xl mb-3">★</div>
+              <img
+                src={item.icon}
+                alt=""
+                className="w-7 h-7 mb-3 object-contain"
+              />
 
               <h3 className="text-white font-semibold">{item.title}</h3>
               <p className="text-gray-400 text-sm mt-1">{item.desc}</p>

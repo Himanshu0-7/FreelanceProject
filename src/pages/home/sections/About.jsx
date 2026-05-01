@@ -1,29 +1,4 @@
-import gsap from "gsap";
-import { useEffect, useRef } from "react";
-
 export default function About() {
-  const textRef = useRef();
-
-  useEffect(() => {
-    const text = "Digital-First World. ";
-    let obj = { count: 0 };
-
-    const tl = gsap.timeline({ repeat: -1 });
-
-    // Typing
-    tl.to(obj, {
-      count: text.length,
-      duration: 2,
-      ease: "none",
-      onUpdate: () => {
-        textRef.current.textContent = text.slice(0, Math.floor(obj.count));
-      },
-    });
-
-    // Instant reset (THIS is key 🔥)
-    tl.set(obj, { count: 0 });
-    tl.set(textRef.current, { textContent: "" });
-  }, []);
   return (
     <section className="relative  bg-[linear-gradient(47deg,rgba(0,0,0,1)_0%,rgba(9,25,72,1)_100%)] w-full min-h-screen pt-4 flex justify-center">
       <section>
