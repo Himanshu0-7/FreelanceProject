@@ -1,16 +1,16 @@
-import { Search } from "lucide-react"; // optional icon lib
+import { Search } from "lucide-react";
 
 export default function BlogSearch() {
   return (
-    <section className="w-full bg-[linear-gradient(90deg,rgba(0,0,0,1)_0%,rgba(9,25,71,1)_100%)] py-20">
+    <section className="w-full py-20 bg-gradient-90-light dark:bg-gradient-90-dark">
       <div className="max-w-[800px] mx-auto px-6 text-center">
         {/* Title */}
-        <h2 className="text-2xl md:text-3xl font-semibold text-blue-400 mb-4">
+        <h2 className="text-2xl md:text-3xl font-semibold text-[var(--primary)] mb-4">
           Blogs Topic
         </h2>
 
         {/* Subtitle */}
-        <p className="text-gray-300 text-sm md:text-base mb-8">
+        <p className="text-[var(--text-muted)] text-sm md:text-base mb-8">
           Get all the blogs about latest technology, To Learn and Grow in your
           Industry
         </p>
@@ -20,15 +20,19 @@ export default function BlogSearch() {
           <input
             type="text"
             placeholder="Search blogs..."
-            className="w-full bg-[#1a2031] border border-gray-500 text-white 
-            px-5 py-3 rounded-lg outline-none 
-            focus:border-blue-500 transition"
+            className="w-full 
+              bg-[var(--card-soft)] 
+              border border-[var(--border)] 
+              text-[var(--text)] 
+              px-5 py-3 rounded-lg outline-none 
+              focus:border-[var(--primary)] 
+              transition"
           />
 
           {/* Icon */}
           <Search
             size={20}
-            className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400"
+            className="absolute right-4 top-1/2 -translate-y-1/2 text-[var(--text-muted)]"
           />
         </div>
       </div>

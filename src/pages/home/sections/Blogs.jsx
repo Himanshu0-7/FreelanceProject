@@ -25,13 +25,14 @@ export default function Blogs() {
       tag: "AGENTIC AI",
     },
   ];
+
   return (
-    <section className="w-full min-h-screen bg-[linear-gradient(47deg,rgba(0,0,0,1)_0%,rgba(9,25,72,1)_100%)] py-20 flex flex-col items-center">
-      <h1 className="text-4xl md:text-5xl font-semibold text-center text-white">
-        Our <span className="text-blue-400">Latest Blogs</span>
+    <section className="w-full min-h-screen py-20 flex flex-col items-center bg-gradient-47-light dark:bg-gradient-47-dark">
+      <h1 className="text-4xl md:text-5xl font-semibold text-center text-[var(--text)]">
+        Our <span className="text-[var(--primary)]">Latest Blogs</span>
       </h1>
 
-      <p className="text-gray-300 text-center max-w-2xl mt-4">
+      <p className="text-[var(--text-muted)] text-center max-w-2xl mt-4">
         Get all the latest Blogs For The New Technology that helps you to learn
         and grow as an individuals
       </p>
@@ -40,22 +41,26 @@ export default function Blogs() {
         {blogs.map((blog, index) => (
           <div
             key={index}
-            className="bg-[#0b1220] rounded-2xl overflow-hidden w-[280px]"
+            className="bg-[var(--card)] rounded-2xl overflow-hidden w-[280px]"
           >
             <div className="relative h-[180px]">
               <img src={blog.img} className="w-full h-full object-cover" />
 
-              <div className="absolute bottom-3 left-1/2 -translate-x-1/2 text-white text-sm font-semibold">
+              <div className="absolute bottom-3 left-1/2 -translate-x-1/2 text-[var(--text)] text-sm font-semibold">
                 {blog.tag}
               </div>
             </div>
 
             <div className="p-4">
-              <h3 className="text-white font-semibold text-lg">{blog.title}</h3>
+              <h3 className="text-[var(--text)] font-semibold text-lg">
+                {blog.title}
+              </h3>
 
-              <p className="text-gray-400 text-sm mt-2">{blog.desc}</p>
+              <p className="text-[var(--text-muted)] text-sm mt-2">
+                {blog.desc}
+              </p>
 
-              <button className="mt-4 bg-blue-600 px-4 py-2 rounded-full text-white text-sm">
+              <button className="mt-4 px-4 py-2 rounded-full text-white text-sm bg-btn-light dark:bg-btn-dark">
                 Learn More →
               </button>
             </div>
@@ -63,7 +68,7 @@ export default function Blogs() {
         ))}
       </div>
 
-      <button className="mt-16 bg-blue-600 px-8 py-3 rounded-full text-white hover:bg-blue-500 transition">
+      <button className="mt-16 px-8 py-3 rounded-full text-white transition bg-btn-light dark:bg-btn-dark">
         View All Blogs
       </button>
     </section>

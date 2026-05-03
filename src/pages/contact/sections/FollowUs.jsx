@@ -9,11 +9,12 @@ const socials = [
   { name: "MSNG TECH", icon: twitter },
   { name: "MSNG TECH", icon: facebook },
 ];
+
 export default function FollowUs() {
   return (
-    <section className="w-full bg-[linear-gradient(90deg,rgba(0,0,0,1)_0%,rgba(9,25,71,1)_100%)] py-20">
+    <section className="w-full bg-gradient-90-light dark:bg-gradient-90-dark py-20">
       <div className="max-w-[1200px] mx-auto px-6 text-center">
-        <h2 className="text-white text-2xl md:text-3xl font-semibold mb-16">
+        <h2 className="text-[var(--text)] text-2xl md:text-3xl font-semibold mb-16">
           Follow Us On:
         </h2>
 
@@ -21,15 +22,14 @@ export default function FollowUs() {
           {socials.map((item, index) => (
             <div
               key={index}
-              className="bg-[#2a2f3a] w-[120px] h-[90px] 
-      rounded-2xl flex flex-col items-center justify-center gap-4
-      hover:-translate-y-1 hover:scale-105 transition duration-300"
+              className="bg-[var(--card)] text-[var(--text)] w-[120px] h-[90px]
+              rounded-2xl flex flex-col items-center justify-center gap-4
+              border border-[var(--card-border)]
+              hover:-translate-y-1 hover:scale-105 transition duration-300"
             >
-              {/* Icon */}
               <img src={item.icon} alt="" className="w-7 h-7 object-contain" />
 
-              {/* Text */}
-              <p className="text-white text-xm">{item.name}</p>
+              <p className="text-sm">{item.name}</p>
             </div>
           ))}
         </div>

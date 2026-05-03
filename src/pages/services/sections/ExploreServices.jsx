@@ -13,10 +13,10 @@ const services = [
 
 export default function ExploreServices() {
   return (
-    <section className="w-full bg-[linear-gradient(90deg,rgba(0,0,0,1)_0%,rgba(9,25,71,1)_100%)] py-10">
-      <div className="max-w-[1400px] mx-auto ">
+    <section className="w-full py-10 bg-gradient-90-light dark:bg-gradient-90-dark">
+      <div className="max-w-[1400px] mx-auto">
         {/* Title */}
-        <h2 className="text-blue-400 text-2xl md:text-4xl font-semibold mb-8">
+        <h2 className="text-[var(--primary)] text-2xl md:text-4xl font-semibold mb-8">
           Explore Our Services
         </h2>
 
@@ -37,7 +37,8 @@ export default function ExploreServices() {
               <div
                 className="absolute left-1/2 -translate-x-1/2 
                 bottom-0 translate-y-1/2
-                bg-[#252832] px-8 py-5 rounded-xl text-white shadow-lg"
+                bg-[var(--card-soft)] px-8 py-5 rounded-xl 
+                text-[var(--text)] shadow-lg"
               >
                 {item.title}
               </div>

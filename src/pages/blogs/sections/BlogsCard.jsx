@@ -1,4 +1,4 @@
-import img from "../../../assets/blog_img.png"; // replace with your image
+import img from "../../../assets/blog_img.png";
 
 const blogs = [
   {
@@ -41,13 +41,14 @@ const blogs = [
 
 export default function BlogCards() {
   return (
-    <section className="w-full bg-[linear-gradient(90deg,rgba(0,0,0,1)_0%,rgba(9,25,71,1)_100%)] py-10">
+    <section className="w-full py-10 bg-gradient-90-light dark:bg-gradient-90-dark">
       <div className="max-w-[1400px] mx-auto px-6 md:px-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 mb-20">
           {blogs.map((item, index) => (
             <div
               key={index}
-              className="bg-[#0b1220] p-4 rounded-2xl shadow-lg hover:-translate-y-2 transition duration-300"
+              className="bg-[var(--card)] p-4 rounded-2xl shadow-lg 
+              hover:-translate-y-2 transition duration-300"
             >
               {/* Image */}
               <div className="rounded-xl overflow-hidden mb-4">
@@ -59,20 +60,22 @@ export default function BlogCards() {
               </div>
 
               {/* Title */}
-              <h3 className="text-white text-lg font-semibold mb-2">
+              <h3 className="text-[var(--text)] text-lg font-semibold mb-2">
                 {item.title}
               </h3>
 
               {/* Description */}
-              <p className="text-gray-400 text-sm mb-6">{item.desc}</p>
+              <p className="text-[var(--text-muted)] text-sm mb-6">
+                {item.desc}
+              </p>
 
               {/* Footer */}
               <div className="flex justify-between items-center">
-                <span className="text-blue-400 text-sm cursor-pointer">
+                <span className="text-[var(--primary)] text-sm cursor-pointer">
                   Explore {item.title}
                 </span>
 
-                <span className="bg-blue-500/20 text-blue-400 text-xs px-3 py-1 rounded-full">
+                <span className="bg-[var(--primary)]/20 text-[var(--primary)] text-xs px-3 py-1 rounded-full">
                   {item.tag}
                 </span>
               </div>

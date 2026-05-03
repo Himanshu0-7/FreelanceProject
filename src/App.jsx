@@ -6,7 +6,6 @@ import About from "./pages/about";
 import Services from "./pages/services";
 import Blogs from "./pages/blogs";
 import Contact from "./pages/contact";
-// import Industires from "./pages/industries";
 import Footer from "./components/layout/Footer";
 function App() {
   return (

@@ -1,12 +1,12 @@
-import mapImg from "../../../assets/location_img.jpg"; // your map image
+import mapImg from "../../../assets/location_img.jpg";
 
 export default function ContactInfo() {
   return (
-    <section className="w-full bg-[linear-gradient(180deg,rgba(0,0,0,1)_0%,rgba(9,25,71,1)_100%)] py-20">
+    <section className="w-full bg-gradient-180-light dark:bg-gradient-180-dark py-20">
       <div className="max-w-[1400px] mx-auto px-6 md:px-10 grid md:grid-cols-2 gap-16 items-start">
-        {/* LEFT SIDE */}
+        {/* LEFT */}
         <div>
-          <h2 className="text-white text-2xl md:text-3xl font-semibold mb-10">
+          <h2 className="text-[var(--text)] text-2xl md:text-3xl font-semibold mb-10">
             Why Contact US
           </h2>
 
@@ -19,7 +19,7 @@ export default function ContactInfo() {
             ].map((item, index) => (
               <div
                 key={index}
-                className="bg-[#0b1220] px-6 py-5 rounded-xl text-gray-300"
+                className="bg-[var(--card)] dark:bg-[var(--card)] text-[var(--text-muted)] px-6 py-5 rounded-xl border border-[var(--card-border)]"
               >
                 {item}
               </div>
@@ -27,13 +27,13 @@ export default function ContactInfo() {
           </div>
         </div>
 
-        {/* RIGHT SIDE */}
+        {/* RIGHT */}
         <div>
-          <h2 className="text-white text-2xl md:text-3xl font-semibold mb-10">
+          <h2 className="text-[var(--text)] text-2xl md:text-3xl font-semibold mb-10">
             Our Location
           </h2>
 
-          <div className="rounded-xl overflow-hidden">
+          <div className="rounded-xl overflow-hidden border border-[var(--card-border)]">
             <img
               src={mapImg}
               alt="map"
