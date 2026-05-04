@@ -30,40 +30,47 @@ export default function Blogs() {
   ];
 
   return (
-    <section className="w-full min-h-screen py-20 flex flex-col items-center bg-gradient-47-light dark:bg-gradient-47-dark">
-      <h1 className="text-4xl md:text-5xl font-semibold text-center text-[var(--text)]">
+    <section className="w-full min-h-screen py-16 sm:py-20 flex flex-col items-center bg-gradient-47-light dark:bg-gradient-47-dark px-6 sm:px-10 lg:px-16">
+      {/* Title */}
+      <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-center text-[var(--text)]">
         Our <span className="text-[var(--primary)]">Latest Blogs</span>
       </h1>
 
-      <p className="text-[var(--text-muted)] text-center max-w-2xl mt-4">
+      {/* Subtitle */}
+      <p className="text-[var(--text-muted)] text-center max-w-2xl mt-4 text-sm sm:text-base">
         Get all the latest Blogs For The New Technology that helps you to learn
-        and grow as an individuals
+        and grow as an individual
       </p>
 
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mt-16">
+      {/* Grid —1 col mobile, 2 col tablet, 4 col desktop */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mt-12 sm:mt-16 w-full max-w-[1200px]">
         {blogs.map((blog, index) => (
           <div
             key={index}
-            className="bg-[var(--card)] rounded-2xl overflow-hidden w-[280px]"
+            className="bg-[var(--card)] rounded-2xl overflow-hidden w-full"
           >
+            {/* Image */}
             <div className="relative h-[180px]">
-              <img src={blog.img} className="w-full h-full object-cover" />
-
-              <div className="absolute bottom-3 left-1/2 -translate-x-1/2 text-[var(--text)] text-sm font-semibold">
+              <img
+                src={blog.img}
+                className="w-full h-full object-cover"
+                alt={blog.title}
+              />
+              {/* Tag badge */}
+              <div className="absolute bottom-3 left-1/2 -translate-x-1/2 bg-black/50 backdrop-blur-sm text-white text-xs font-semibold px-3 py-1 rounded-full whitespace-nowrap">
                 {blog.tag}
               </div>
             </div>
 
+            {/* Content */}
             <div className="p-4">
-              <h3 className="text-[var(--text)] font-semibold text-lg">
+              <h3 className="text-[var(--text)] font-semibold text-base sm:text-lg">
                 {blog.title}
               </h3>
-
-              <p className="text-[var(--text-muted)] text-sm mt-2">
+              <p className="text-[var(--text-muted)] text-sm mt-2 line-clamp-3">
                 {blog.desc}
               </p>
-
-              <button className="mt-4 px-4 py-2 rounded-full text-white text-sm bg-btn-light dark:bg-btn-dark">
+              <button className="mt-4 px-4 py-2 rounded-full text-white text-sm bg-btn-light dark:bg-btn-dark hover:opacity-90 transition">
                 Learn More →
               </button>
             </div>
@@ -71,9 +78,10 @@ export default function Blogs() {
         ))}
       </div>
 
+      {/* View all button */}
       <button
         onClick={() => navigate("/blogs")}
-        className="mt-16 px-8 py-3 rounded-full text-white transition bg-btn-light dark:bg-btn-dark"
+        className="mt-12 sm:mt-16 px-8 py-3 rounded-full text-white transition bg-btn-light dark:bg-btn-dark hover:opacity-90"
       >
         View All Blogs
       </button>

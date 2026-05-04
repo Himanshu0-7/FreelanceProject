@@ -39,8 +39,15 @@
   --border: #5a7a89;
 }
 
+html {
+  scrollbar-gutter: stable;
+  /* reserves scrollbar space always */
+  overflow-x: hidden;
+}
+
 body {
   font-family: "Inter", sans-serif;
+  overflow-x: hidden;
 }
 
 @keyframes scrollLeft {

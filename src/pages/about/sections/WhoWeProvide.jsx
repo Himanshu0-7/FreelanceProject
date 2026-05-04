@@ -4,61 +4,61 @@ import img3 from "../../../assets/whoweprovide_img3.png";
 
 export default function WhoWeProvide() {
   return (
-    <section className="w-full pt-40 bg-gradient-270-light dark:bg-gradient-270-dark">
-      {/* INNER SECTION */}
-      <div className="bg-[var(--card-bg)] text-[var(--text)] py-40 max-w-[1700px] mx-auto px-6 md:px-8 rounded-[40px]">
+    <section className="w-full pt-16 sm:pt-24 md:pt-40 bg-gradient-270-light dark:bg-gradient-270-dark">
+      {/* Inner card */}
+      <div className="bg-[var(--card-bg)] text-[var(--text)] py-16 sm:py-24 md:py-40 max-w-[1700px] mx-auto px-6 md:px-8 rounded-[24px] sm:rounded-[32px] md:rounded-[40px]">
         {/* Title */}
-        <h2 className="text-center text-2xl md:text-4xl font-semibold text-[var(--primary)] mb-12">
+        <h2 className="text-center text-xl sm:text-2xl md:text-4xl font-semibold text-[var(--primary)] mb-16 sm:mb-20 md:mb-12">
           Who We Provide
         </h2>
 
-        {/* Grid */}
-        <div className="grid md:grid-cols-2 gap-20">
-          {/* LEFT BIG CARD */}
-          <div className="relative h-[400px] md:h-[600px] rounded-3xl">
+        {/* Grid — stacks on mobile */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 sm:gap-20">
+          {/* LEFT — big card */}
+          <div className="relative h-[280px] sm:h-[400px] md:h-[600px] rounded-2xl sm:rounded-3xl pb-6">
             <img
               src={img1}
-              alt=""
-              className="w-full h-full object-cover rounded-3xl"
+              alt="Risk Management"
+              className="w-full h-full object-cover rounded-2xl sm:rounded-3xl"
             />
-
             <div
               className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2
-              bg-[var(--card-soft)] px-8 py-5 rounded-full text-xl text-[var(--primary)]"
+              bg-[var(--card-soft)] px-4 sm:px-8 py-3 sm:py-5 rounded-full
+              text-sm sm:text-base md:text-xl text-[var(--primary)] whitespace-nowrap"
             >
               Risk Management Consultancy
             </div>
           </div>
 
-          {/* RIGHT SIDE */}
-          <div className="flex flex-col gap-12">
-            {/* TOP */}
-            <div className="relative h-[190px] md:h-[280px] rounded-3xl">
+          {/* RIGHT — two stacked cards */}
+          <div className="flex flex-col gap-16 sm:gap-12">
+            {/* Top */}
+            <div className="relative h-[180px] sm:h-[220px] md:h-[280px] rounded-2xl sm:rounded-3xl pb-6">
               <img
                 src={img2}
-                alt=""
-                className="w-full h-full object-cover rounded-3xl"
+                alt="Operational Efficiency"
+                className="w-full h-full object-cover rounded-2xl sm:rounded-3xl"
               />
-
               <div
                 className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2
-                bg-[var(--card-soft)] px-8 py-5 rounded-full text-[var(--primary)] text-xl"
+                bg-[var(--card-soft)] px-4 sm:px-8 py-3 sm:py-5 rounded-full
+                text-sm sm:text-base md:text-xl text-[var(--primary)] whitespace-nowrap"
               >
                 Operational Efficiency
               </div>
             </div>
 
-            {/* BOTTOM */}
-            <div className="relative h-[190px] md:h-[280px] rounded-3xl">
+            {/* Bottom */}
+            <div className="relative h-[180px] sm:h-[220px] md:h-[280px] rounded-2xl sm:rounded-3xl pb-6">
               <img
                 src={img3}
-                alt=""
-                className="w-full h-full object-cover rounded-3xl"
+                alt="Business Strategy"
+                className="w-full h-full object-cover rounded-2xl sm:rounded-3xl"
               />
-
               <div
                 className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2
-                bg-[var(--card-soft)] px-8 py-5 rounded-full text-[var(--primary)] text-xl"
+                bg-[var(--card-soft)] px-4 sm:px-8 py-3 sm:py-5 rounded-full
+                text-sm sm:text-base md:text-xl text-[var(--primary)] whitespace-nowrap"
               >
                 Business Strategy Consulting
               </div>

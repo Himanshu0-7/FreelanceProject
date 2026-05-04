@@ -4,43 +4,43 @@ import Client_Icon from "../../../assets/feedback_client_icon.svg";
 
 export default function Feedback() {
   return (
-    <section
-      className="relative w-full py-20 flex flex-col gap-6 
-  bg-gradient-90-light dark:bg-gradient-180-dark overflow-hidden"
-    >
+    <section className="relative w-full py-16 sm:py-20 flex flex-col gap-6 bg-gradient-90-light dark:bg-gradient-180-dark overflow-hidden">
+      {/* Background images */}
       <img
         src={Background}
-        className="absolute inset-0 w-full h-full object-cover 
-    opacity-70 mix-blend-overlay pointer-events-none"
+        className="absolute inset-0 w-full h-full object-cover opacity-70 mix-blend-overlay pointer-events-none"
       />
-
       <img
         src={Perspective}
-        className="absolute left-0 top-0 h-full w-1/2 object-cover 
-    opacity-40 pointer-events-none"
+        className="absolute left-0 top-0 h-full w-full sm:w-1/2 object-cover opacity-20 sm:opacity-40 pointer-events-none"
       />
 
-      <div className="text-center mb-4">
-        <h1 className="text-[var(--special-text)] text-4xl font-semibold">
+      {/* Header */}
+      <div className="relative z-10 text-center px-6">
+        <h1 className="text-[var(--special-text)] text-3xl sm:text-4xl font-semibold">
           Client <span className="text-[var(--primary)]">We Served</span>
         </h1>
-
-        <p className="text-[var(--text)] font-semibold text-xl mt-2 text-sm">
+        <p className="text-[var(--text)] font-semibold text-base sm:text-xl mt-2">
           One Platform Where you get all the Ideas you need for your project
         </p>
       </div>
 
-      <div className="px-20">
+      {/* Scrolling rows */}
+      <div className="relative z-10 px-4 sm:px-10 lg:px-20">
         <div className="relative py-4">
-          <span className="absolute top-0 z-10 left-0 w-10 h-10 border-t-[1.5px] border-l-[1.5px] border-[var(--border)]" />
-          <span className="absolute top-0 z-10 right-0 w-10 h-10 border-t-[1.5px] border-r-[1.5px] border-[var(--border)]" />
-          <span className="absolute bottom-0 z-10 left-0 w-10 h-10 border-b-[1.5px] border-l-[1.5px] border-[var(--border)]" />
-          <span className="absolute bottom-0 z-10 right-0 w-10 h-10 border-b-[1.5px] border-r-[1.5px] border-[var(--border)]" />
+          {/* Corner brackets */}
+          <span className="absolute top-0 z-10 left-0 w-6 sm:w-10 h-6 sm:h-10 border-t-[1.5px] border-l-[1.5px] border-[var(--border)]" />
+          <span className="absolute top-0 z-10 right-0 w-6 sm:w-10 h-6 sm:h-10 border-t-[1.5px] border-r-[1.5px] border-[var(--border)]" />
+          <span className="absolute bottom-0 z-10 left-0 w-6 sm:w-10 h-6 sm:h-10 border-b-[1.5px] border-l-[1.5px] border-[var(--border)]" />
+          <span className="absolute bottom-0 z-10 right-0 w-6 sm:w-10 h-6 sm:h-10 border-b-[1.5px] border-r-[1.5px] border-[var(--border)]" />
 
-          <div className="flex flex-col gap-10">
+          <div className="flex flex-col gap-6 sm:gap-10">
             <Row direction="left" />
             <Row direction="right" />
-            <Row direction="left" />
+            {/* Third row hidden on mobile to avoid crowding */}
+            <div className="hidden sm:block">
+              <Row direction="left" />
+            </div>
           </div>
         </div>
       </div>
@@ -54,15 +54,18 @@ function Row({ direction = "left" }) {
   return (
     <div className="overflow-hidden w-full">
       <div
-        className={`flex gap-[15px] w-max ${direction === "left" ? "animate-scroll-left" : "animate-scroll-right"
+        className={`flex gap-[10px] sm:gap-[15px] w-max ${direction === "left" ? "animate-scroll-left" : "animate-scroll-right"
           }`}
       >
         {[...items, ...items].map((icon, i) => (
           <div
             key={i}
-            className="w-[150px] h-[150px] shrink-0 border border-[var(--card-border)] flex items-center justify-center bg-transparent"
+            className="w-[100px] h-[100px] sm:w-[130px] sm:h-[130px] lg:w-[150px] lg:h-[150px] shrink-0 border border-[var(--card-border)] flex items-center justify-center bg-transparent"
           >
-            <img src={icon} className="w-20 h-20 object-contain opacity-80" />
+            <img
+              src={icon}
+              className="w-14 h-14 sm:w-16 sm:h-16 lg:w-20 lg:h-20 object-contain opacity-80"
+            />
           </div>
         ))}
       </div>

@@ -1,14 +1,14 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { NavLink } from "react-router-dom";
 import imgSrc from "../../assets/logo.png";
-
-// 👉 your custom icons
 import sunIcon from "../../assets/lightMode.svg";
 import moonIcon from "../../assets/darkMode.svg";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [dark, setDark] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const menuRef = useRef();
 
   const navLinks = [
     { name: "Home", path: "/" },
@@ -18,34 +18,57 @@ const Navbar = () => {
     { name: "Contact", path: "/contact" },
   ];
 
+  // Sync dark mode on mount
   useEffect(() => {
     const isDark = document.documentElement.classList.contains("dark");
     setDark(isDark);
   }, []);
 
+  // Add shadow when scrolled
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 10);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  // Close menu on outside click
+  useEffect(() => {
+    const handleOutsideClick = (e) => {
+      if (menuRef.current && !menuRef.current.contains(e.target)) {
+        setOpen(false);
+      }
+    };
+    if (open) document.addEventListener("mousedown", handleOutsideClick);
+    return () => document.removeEventListener("mousedown", handleOutsideClick);
+  }, [open]);
+
   const toggleTheme = () => {
     document.documentElement.classList.toggle("dark");
-    setDark(!dark);
+    setDark((prev) => !prev);
   };
 
   return (
-    <nav className="relative w-full h-16 fixed top-0 left-0 z-50 bg-[var(--bg-secondary)] backdrop-blur-md">
-      <div className="w-full flex items-center justify-between px-12 xl:px-20 h-full">
+    <nav
+      ref={menuRef}
+      className={`fixed top-0 left-0 w-full z-50 bg-[var(--bg-secondary)] backdrop-blur-md transition-shadow duration-300 ${scrolled ? "shadow-md shadow-black/10" : ""
+        }`}
+    >
+      <div className="w-full flex items-center justify-between px-6 sm:px-10 xl:px-20 h-16">
         {/* Logo */}
-        <div className="text-[var(--text)] text-xl font-bold">
-          <img src={imgSrc} alt="Logo" className="h-10 w-auto" />
-        </div>
+        <NavLink to="/">
+          <img src={imgSrc} alt="Logo" className="h-8 sm:h-10 w-auto" />
+        </NavLink>
 
-        {/* Desktop Nav */}
-        <div className="flex items-center gap-8">
-          <ul className="hidden md:flex items-center gap-8 text-[var(--text)]">
+        {/* Desktop nav + theme toggle */}
+        <div className="hidden md:flex items-center gap-8">
+          <ul className="flex items-center gap-6 lg:gap-8 text-[var(--text)]">
             {navLinks.map((link) => (
               <li key={link.name}>
                 <NavLink
                   to={link.path}
                   className={({ isActive }) =>
                     isActive
-                      ? "text-[var(--primary)] font-semibold border-b-4 border-[var(--primary)] pb-5"
+                      ? "text-[var(--primary)] font-semibold border-b-2 border-[var(--primary)] pb-1"
                       : "hover:text-[var(--primary)] transition"
                   }
                 >
@@ -55,61 +78,73 @@ const Navbar = () => {
             ))}
           </ul>
 
-          {/* Theme Toggle (Custom Icons) */}
           <button
             onClick={toggleTheme}
             className="p-2 rounded-full hover:bg-[var(--card-soft)] transition"
+            aria-label="Toggle theme"
           >
-            <img
-              src={dark ? sunIcon : moonIcon}
-              alt="theme toggle"
-              className="w-5 h-5"
-            />
+            <img src={dark ? sunIcon : moonIcon} alt="" className="w-5 h-5" />
           </button>
         </div>
 
-        {/* Mobile Toggle */}
-        <div
-          className="md:hidden text-[var(--text)] cursor-pointer"
-          onClick={() => setOpen(!open)}
-        >
-          ☰
+        {/* Mobile — theme toggle + hamburger */}
+        <div className="md:hidden flex items-center gap-3">
+          <button
+            onClick={toggleTheme}
+            className="p-2 rounded-full hover:bg-[var(--card-soft)] transition"
+            aria-label="Toggle theme"
+          >
+            <img src={dark ? sunIcon : moonIcon} alt="" className="w-5 h-5" />
+          </button>
+
+          <button
+            onClick={() => setOpen((prev) => !prev)}
+            className="text-[var(--text)] p-2 rounded-md hover:bg-[var(--card-soft)] transition"
+            aria-label="Toggle menu"
+          >
+            {/* Animated hamburger → X */}
+            <div className="w-5 flex flex-col gap-[5px]">
+              <span
+                className={`block h-[2px] bg-current rounded transition-all duration-300 origin-center ${open ? "rotate-45 translate-y-[7px]" : ""
+                  }`}
+              />
+              <span
+                className={`block h-[2px] bg-current rounded transition-all duration-300 ${open ? "opacity-0 scale-x-0" : ""
+                  }`}
+              />
+              <span
+                className={`block h-[2px] bg-current rounded transition-all duration-300 origin-center ${open ? "-rotate-45 -translate-y-[7px]" : ""
+                  }`}
+              />
+            </div>
+          </button>
         </div>
       </div>
 
-      {/* Mobile Menu */}
-      {open && (
-        <div className="md:hidden bg-gradient-180-light dark:bg-gradient-180-dark px-6 pb-4">
-          <ul className="flex flex-col gap-4 text-[var(--text)]">
-            {navLinks.map((link) => (
-              <li key={link.name}>
-                <NavLink
-                  to={link.path}
-                  className="block py-2 border-b border-[var(--border)]"
-                  onClick={() => setOpen(false)}
-                >
-                  {link.name}
-                </NavLink>
-              </li>
-            ))}
-
-            {/* Theme Toggle Mobile */}
-            <li>
-              <button
-                onClick={toggleTheme}
-                className="flex items-center gap-2 py-2 text-[var(--text)]"
+      {/* Mobile menu — animated slide down */}
+      <div
+        className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${open ? "max-h-[400px] opacity-100" : "max-h-0 opacity-0"
+          }`}
+      >
+        <ul className="flex flex-col bg-[var(--bg-secondary)] backdrop-blur-md px-6 pb-4 pt-2 gap-1 text-[var(--text)]">
+          {navLinks.map((link) => (
+            <li key={link.name}>
+              <NavLink
+                to={link.path}
+                className={({ isActive }) =>
+                  `block py-3 border-b border-[var(--border)] text-sm font-medium transition ${isActive
+                    ? "text-[var(--primary)]"
+                    : "hover:text-[var(--primary)]"
+                  }`
+                }
+                onClick={() => setOpen(false)}
               >
-                <img
-                  src={dark ? sunIcon : moonIcon}
-                  alt=""
-                  className="w-5 h-5"
-                />
-                {dark ? "Light Mode" : "Dark Mode"}
-              </button>
+                {link.name}
+              </NavLink>
             </li>
-          </ul>
-        </div>
-      )}
+          ))}
+        </ul>
+      </div>
     </nav>
   );
 };
