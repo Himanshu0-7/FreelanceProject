@@ -1,4 +1,7 @@
+import { useNavigate } from "react-router-dom";
+
 export default function About() {
+  const navigate = useNavigate();
   return (
     <section className="relative bg-gradient-47-light dark:bg-gradient-47-dark w-full min-h-screen pt-4 flex justify-center">
       <section>
@@ -51,7 +54,10 @@ export default function About() {
               </div>
 
               <div className="col-span-2 mt-6 flex justify-start">
-                <button className="px-6 py-3 rounded-full text-white bg-btn-light dark:bg-btn-dark">
+                <button
+                  onClick={() => navigate("/about")}
+                  className="px-6 py-3 rounded-full text-white bg-btn-light dark:bg-btn-dark"
+                >
                   Learn More →
                 </button>
               </div>

@@ -3,6 +3,8 @@ export default {
   theme: {
     extend: {
       backgroundImage: {
+        "gradient-0-dark":
+          "linear-gradient(0deg, rgba(1,5,14,1) 10%, rgba(13,36,104,1) 50%, rgba(1,5,14,1) 100%)",
         "gradient-47-light": "linear-gradient(47deg, #FFFFFF 0%, #A7DEF9 100%)",
         "gradient-47-dark": "linear-gradient(47deg, #000000 0%, #091948 100%)",
 

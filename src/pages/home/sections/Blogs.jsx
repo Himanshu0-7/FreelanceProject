@@ -1,4 +1,7 @@
+import { useNavigate } from "react-router-dom";
+
 export default function Blogs() {
+  const navigate = useNavigate();
   const blogs = [
     {
       title: "What is Agentic AI",
@@ -68,7 +71,10 @@ export default function Blogs() {
         ))}
       </div>
 
-      <button className="mt-16 px-8 py-3 rounded-full text-white transition bg-btn-light dark:bg-btn-dark">
+      <button
+        onClick={() => navigate("/blogs")}
+        className="mt-16 px-8 py-3 rounded-full text-white transition bg-btn-light dark:bg-btn-dark"
+      >
         View All Blogs
       </button>
     </section>
