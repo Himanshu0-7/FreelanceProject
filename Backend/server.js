@@ -6,9 +6,11 @@ const contactRoutes = require("./routes/contact");
 
 const app = express();
 
-app.use(cors({
-  origin: "https://freelance-project-lilac.vercel.app/"
-}));
+app.use(
+  cors({
+    origin: "https://freelance-project-lilac.vercel.app",
+  }),
+);
 app.use(express.json());
 
 app.use("/api/contact", contactRoutes);
