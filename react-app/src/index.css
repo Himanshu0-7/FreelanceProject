@@ -1,0 +1,79 @@
+@config "../tailwind.config.js";
+@import "tailwindcss";
+
+:root {
+
+  --bg: #f0f0f0;
+  --bg-secondary: #ffffff;
+  --primary: #42B9F4;
+  --special-text: #42B9F4;
+  --text: #000000;
+  --text-muted: #4b5563;
+  --card-bg: #ffffff;
+  --card: #f6f9fd;
+  --card-soft: #edf8fe;
+  --card-hard: #f1f2f4;
+  --card-border: #75c2d9;
+  --border: #000;
+}
+
+.dark {
+  --bg: #01050e;
+  --bg-secondary: #030614;
+  --card: #0b1220;
+  --card-soft: #252832;
+
+  --text: #ffffff;
+  --text-muted: #9ca3af;
+
+  --primary: #1487d5;
+  --special-text: #1487d5;
+  --primary-light: #42b9f4;
+
+  --border: rgba(255, 255, 255, 0.1);
+
+  --card: #12151d;
+  --card-bg: #12151d;
+  --card-hard: #12151d;
+  --card-border: #12151d;
+  --border: #5a7a89;
+}
+
+html {
+  scrollbar-gutter: stable;
+  /* reserves scrollbar space always */
+  overflow-x: hidden;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  overflow-x: hidden;
+}
+
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scrollRight {
+  0% {
+    transform: translateX(-50%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@utility animate-scroll-left {
+  animation: scrollLeft 20s linear infinite;
+}
+
+@utility animate-scroll-right {
+  animation: scrollRight 20s linear infinite;
+}
