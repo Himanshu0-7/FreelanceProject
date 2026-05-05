@@ -8,7 +8,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: "https://freelance-project-lilac.vercel.app",
+    origin: "https://freelanceproject-lac.vercel.app",
   }),
 );
 app.use(express.json());
