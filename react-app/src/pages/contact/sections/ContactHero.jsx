@@ -53,7 +53,7 @@ export default function ContactHero() {
   };
 
   return (
-    <section className="relative w-full py-16 sm:py-20 bg-gradient-180-light dark:bg-gradient-180-dark">
+    <section className="w-full py-16 sm:py-20">
       {/* Background Grid */}
       <img
         src={PerspectiveImg}

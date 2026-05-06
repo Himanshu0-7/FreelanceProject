@@ -9,7 +9,7 @@ export default function ContactInfo() {
   ];
 
   return (
-    <section className="w-full bg-gradient-180-light dark:bg-gradient-180-dark py-16 sm:py-20">
+    <section className="w-full py-16 sm:py-20">
       <div className="max-w-[1400px] mx-auto px-6 md:px-10 grid grid-cols-1 md:grid-cols-2 gap-10 sm:gap-16 items-start">
         {/* LEFT — reasons */}
         <div>
