@@ -31,7 +31,7 @@ export default function Footer() {
           </h2>
 
           <ul className="flex flex-col gap-2 text-white font-semibold">
-            {["Home", "About", "Services", "Projects", "News"].map((item) => (
+            {["Home", "About", "Services", "Blogs", "Contact"].map((item) => (
               <li
                 key={item}
                 className="hover:text-blue-400 transition cursor-pointer"

@@ -14,6 +14,8 @@
   --card-soft: #edf8fe;
   --card-hard: #f1f2f4;
   --card-border: #75c2d9;
+  --card-border2: #000;
+  --border2: #75c2d9;
   --border: #000;
 }
 
@@ -22,21 +24,19 @@
   --bg-secondary: #030614;
   --card: #0b1220;
   --card-soft: #252832;
-
   --text: #ffffff;
   --text-muted: #9ca3af;
-
   --primary: #1487d5;
   --special-text: #1487d5;
   --primary-light: #42b9f4;
-
   --border: rgba(255, 255, 255, 0.1);
-
   --card: #12151d;
   --card-bg: #12151d;
   --card-hard: #12151d;
-  --card-border: #12151d;
-  --border: #5a7a89;
+  --card-border: #7199ac;
+  --card-border2: #7199ac;
+  --border2: #12151d;
+  --border: #12151d;
 }
 
 html {

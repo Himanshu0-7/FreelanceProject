@@ -7,6 +7,7 @@ import icon4 from "../../../assets/hero_img1.png";
 import icon5 from "../../../assets/hero_img5.png";
 import icon6 from "../../../assets/hero_img6.png";
 import HeroImage from "../../../assets/HeroSection_image.svg";
+import { useNavigate } from "react-router-dom";
 
 // 👇 Toggle this to switch versions
 const MOBILE_ORBIT = "behind"; // "hide" | "behind"
@@ -20,6 +21,7 @@ export default function Hero() {
   const icons = [icon1, icon2, icon3, icon4, icon5, icon6];
   const triangleRef = useRef();
   const bgRef = useRef();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const total = icons.length;
@@ -271,7 +273,10 @@ export default function Hero() {
             <button className="bg-btn-light dark:bg-btn-dark px-5 py-2.5 sm:px-6 sm:py-3 rounded-full text-white font-semibold transition duration-300 hover:opacity-90">
               Our Services
             </button>
-            <button className="bg-[var(--card-soft)] text-[var(--text)] px-5 py-2.5 sm:px-6 sm:py-3 rounded-full">
+            <button
+              onClick={() => navigate("/contact")}
+              className="bg-[var(--card-soft)] text-[var(--text)] px-5 py-2.5 sm:px-6 sm:py-3 rounded-full"
+            >
               Free Consultancy
             </button>
           </div>

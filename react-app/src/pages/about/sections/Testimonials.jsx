@@ -31,8 +31,8 @@ export default function Testimonials() {
                 flex flex-col justify-center items-center
                 transition-all duration-300
                 ${item.highlight
-                  ? "border-[var(--border)] bg-[var(--card-bg)] scale-105"
-                  : "border-[var(--special-text)] bg-[var(--card)] opacity-80 hover:opacity-100"
+                  ? "border-[var(--card-border2)] bg-[var(--card-bg)] scale-105"
+                  : "border-[var(--border2)] bg-[var(--card)] opacity-80 hover:opacity-100"
                 }
               `}
             >

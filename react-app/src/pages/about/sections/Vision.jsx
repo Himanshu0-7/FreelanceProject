@@ -1,74 +1,104 @@
+const coreValues = [
+  {
+    title: "Innovation First",
+    desc: "Continuously adopting modern technologies including Agentic AI to drive transformation",
+  },
+  {
+    title: "Customer Centric Approach",
+    desc: "Aligning every solution with business goals and measurable outcomes",
+  },
+  {
+    title: "Integrity and Transparency",
+    desc: "Building trust through ethical practices and clear communication",
+  },
+  {
+    title: "Excellence in Execution",
+    desc: "Delivering high quality solutions with precision and consistency",
+  },
+  {
+    title: "Agility and Scalability",
+    desc: "Adapting quickly to changing business needs and scaling efficiently",
+  },
+];
+
 export default function VisionSection() {
   return (
-    <section className="w-full py-20 bg-gradient-270-light dark:bg-gradient-270-dark">
+    <section className="w-full py-24 bg-gradient-270-light dark:bg-gradient-270-dark">
       <div className="max-w-[1400px] mx-auto px-6 md:px-10">
-        <div className="grid md:grid-cols-2 gap-15 items-stretch">
-          {/* LEFT SIDE (2 CARDS) */}
-          <div className="flex flex-col gap-10">
+        <div className="grid md:grid-cols-2 gap-10 items-stretch">
+          {/* LEFT — Vision + Mission */}
+          <div className="flex flex-col gap-6">
             {/* Vision */}
-            <div className="bg-[var(--card)] p-8 rounded-2xl">
-              <h3 className="text-2xl font-semibold mb-4 text-[var(--text)]">
-                Our Vision
-              </h3>
-              <p className="text-[var(--text-muted)] text-sm leading-relaxed">
-                At the core of everything we do is a commitment to trust,
-                innovation, and excellence. We prioritize security-first
-                thinking, transparent collaboration, and practical
-                execution—ensuring every solution delivers real business impact
-                while remaining adaptable for the future.
-              </p>
+            <div className="relative bg-[var(--card)] rounded-3xl p-8 overflow-hidden flex-1">
+              <div className="absolute top-0 left-0 w-1.5 h-full rounded-l-3xl bg-[var(--primary)]" />
+              <div className="pl-4">
+                <span className="text-xs font-semibold uppercase tracking-widest text-[var(--primary)] mb-3 block">
+                  Our Vision
+                </span>
+                <h3 className="text-xl font-semibold text-[var(--text)] mb-3">
+                  Globally Trusted Technology Partner
+                </h3>
+                <p className="text-[var(--text-muted)] text-sm leading-relaxed">
+                  To become a globally trusted technology partner known for
+                  delivering innovative, secure, and future ready digital
+                  solutions that create lasting business impact.
+                </p>
+              </div>
             </div>
 
             {/* Mission */}
-            <div className="bg-[var(--card)] p-8 rounded-2xl">
-              <h3 className="text-2xl font-semibold mb-4 text-[var(--text)]">
-                Our Mission
-              </h3>
-              <p className="text-[var(--text-muted)] text-sm leading-relaxed">
-                Our mission is to help organizations navigate the evolving
-                digital landscape through secure, intelligent, and scalable
-                solutions. We enable businesses to adopt cybersecurity,
-                generative AI, and automation with confidence—driving
-                efficiency, innovation, and sustainable growth.
-              </p>
+            <div className="relative bg-[var(--card)] rounded-3xl p-8 overflow-hidden flex-1">
+              <div className="absolute top-0 left-0 w-1.5 h-full rounded-l-3xl bg-[var(--primary)]" />
+              <div className="pl-4">
+                <span className="text-xs font-semibold uppercase tracking-widest text-[var(--primary)] mb-3 block">
+                  Our Mission
+                </span>
+                <h3 className="text-xl font-semibold text-[var(--text)] mb-3">
+                  Empowering Through Technology
+                </h3>
+                <p className="text-[var(--text-muted)] text-sm leading-relaxed">
+                  To empower organizations through advanced technology,
+                  intelligent automation, and strategic execution while
+                  maintaining the highest standards of quality, integrity, and
+                  customer success.
+                </p>
+              </div>
             </div>
           </div>
 
-          {/* RIGHT SIDE */}
-          <div className="bg-[var(--card)] p-6 rounded-2xl self-center max-w-[500px]">
-            <h3 className="text-2xl font-semibold text-[var(--primary)] mb-6">
-              Why Choose Us
-            </h3>
-
-            <ul className="space-y-4 text-[var(--text-muted)] text-sm">
-              <li>
-                <span className="font-semibold text-[var(--text)]">
-                  Practical Expertise –{" "}
-                </span>
-                We focus on real implementation, not just theory
-              </li>
-
-              <li>
-                <span className="font-semibold text-[var(--text)]">
-                  Future-Ready Approach –{" "}
-                </span>
-                Solutions designed for scalability and evolving tech
-              </li>
-
-              <li>
-                <span className="font-semibold text-[var(--text)]">
-                  Security First Mindset –{" "}
-                </span>
-                Every solution is built with protection at its core
-              </li>
-
-              <li>
-                <span className="font-semibold text-[var(--text)]">
-                  Client-Centric Process –{" "}
-                </span>
-                We work as partners, not vendors
-              </li>
-            </ul>
+          {/* RIGHT — Core Values */}
+          <div className="relative bg-[var(--card)] rounded-3xl p-8 overflow-hidden">
+            <div className="absolute top-0 left-0 w-1.5 h-full rounded-l-3xl bg-[var(--primary)]" />
+            <div className="pl-4">
+              <span className="text-xs font-semibold uppercase tracking-widest text-[var(--primary)] mb-3 block">
+                Our Core Values
+              </span>
+              <h3 className="text-xl font-semibold text-[var(--text)] mb-6">
+                What Drives Us Every Day
+              </h3>
+              <div className="flex flex-col gap-3">
+                {coreValues.map((item, i) => (
+                  <div
+                    key={i}
+                    className="flex items-start gap-4 bg-[var(--card-soft)] rounded-2xl px-4 py-3"
+                  >
+                    <div className="shrink-0 w-6 h-6 rounded-full bg-[var(--primary)]/20 flex items-center justify-center mt-0.5">
+                      <span className="text-[var(--primary)] text-xs font-bold">
+                        {i + 1}
+                      </span>
+                    </div>
+                    <div>
+                      <p className="text-[var(--text)] text-sm font-semibold">
+                        {item.title}
+                      </p>
+                      <p className="text-[var(--text-muted)] text-xs mt-0.5">
+                        {item.desc}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </div>
