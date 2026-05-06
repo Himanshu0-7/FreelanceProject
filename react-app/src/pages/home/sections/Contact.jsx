@@ -3,7 +3,7 @@ import Perspective from "../../../assets/Perspective-Grid.svg";
 import locationIcon from "../../../assets/locationIcon.svg";
 import phoneIcon from "../../../assets/phoneIcon.svg";
 import mailIcon from "../../../assets/mailIcon.svg";
-import { sendContactForm } from "../../../api/contactApi"; // adjust path
+import { sendContactForm } from "../../../api/contactApi";
 
 export default function Contact() {
   const cards = [
@@ -35,15 +35,20 @@ export default function Contact() {
   const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
+    setForm({
+      ...form,
+      [e.target.name]: e.target.value,
+    });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     setLoading(true);
 
     try {
       const res = await sendContactForm(form);
+
       alert(res.message);
 
       setForm({
@@ -61,7 +66,7 @@ export default function Contact() {
   };
 
   return (
-    <section className="relative w-full min-h-screen py-16 sm:py-20 flex flex-col items-center bg-gradient-180-light dark:bg-gradient-180-dark px-6 sm:px-10 lg:px-16">
+    <section className="relative w-full min-h-dvh py-16 sm:py-20 flex flex-col items-center overflow-hidden bg-gradient-180-light dark:bg-gradient-180-dark px-6 sm:px-10 lg:px-16">
       {/* Background */}
       <img
         src={Perspective}
@@ -70,14 +75,16 @@ export default function Contact() {
       />
 
       {/* Header */}
-      <div className="relative z-10 text-center">
-        <h1 className="text-3xl sm:text-4xl font-semibold text-[var(--text)]">
+      <div className="relative z-10 text-center max-w-2xl">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-[var(--text)]">
           <span className="text-[var(--primary)]">Contact Us</span>
         </h1>
-        <h2 className="text-lg sm:text-2xl text-[var(--text)] mt-2">
+
+        <h2 className="text-lg sm:text-2xl text-[var(--text)] mt-3 leading-relaxed">
           Talk to Our Consultancy Expert Today
         </h2>
-        <p className="text-[var(--text-muted)] mt-2 text-sm sm:text-base">
+
+        <p className="text-[var(--text-muted)] mt-2 text-sm sm:text-base leading-relaxed">
           If You Have Any Query, Feel Free To Contact Us
         </p>
       </div>
@@ -89,18 +96,20 @@ export default function Contact() {
           {cards.map((item, i) => (
             <div
               key={i}
-              className="bg-[var(--card)] rounded-2xl flex flex-row sm:flex-col items-center gap-4 text-left sm:text-center p-4"
+              className="bg-[var(--card)] rounded-2xl flex flex-row sm:flex-col items-center gap-4 text-left sm:text-center p-4 border border-[var(--border)]"
             >
               <img
                 src={item.icon}
                 alt=""
                 className="w-7 h-7 shrink-0 sm:mb-3"
               />
+
               <div>
                 <h3 className="text-[var(--text)] font-semibold text-sm sm:text-base">
                   {item.title}
                 </h3>
-                <p className="text-[var(--text-muted)] text-xs sm:text-sm mt-1">
+
+                <p className="text-[var(--text-muted)] text-xs sm:text-sm mt-1 leading-relaxed">
                   {item.desc}
                 </p>
               </div>
@@ -108,7 +117,7 @@ export default function Contact() {
           ))}
         </div>
 
-        {/* RIGHT — FORM */}
+        {/* FORM */}
         <form
           onSubmit={handleSubmit}
           className="bg-[var(--card-hard)] rounded-2xl p-5 sm:p-6 w-full max-w-lg mx-auto border border-[var(--border)]"
@@ -119,35 +128,39 @@ export default function Contact() {
 
           <div className="flex flex-col gap-3 sm:gap-4">
             <input
+              type="text"
               name="name"
               value={form.name}
               onChange={handleChange}
               placeholder="Your Name"
-              className="bg-[var(--card-soft)] text-[var(--text)] px-4 py-2.5 rounded-md outline-none"
+              className="bg-[var(--card-soft)] text-[var(--text)] px-4 py-3 rounded-md outline-none border border-transparent focus:border-[var(--primary)] transition"
             />
 
             <input
+              type="email"
               name="email"
               value={form.email}
               onChange={handleChange}
               placeholder="Your Email"
-              className="bg-[var(--card-soft)] text-[var(--text)] px-4 py-2.5 rounded-md outline-none"
+              className="bg-[var(--card-soft)] text-[var(--text)] px-4 py-3 rounded-md outline-none border border-transparent focus:border-[var(--primary)] transition"
             />
 
             <input
+              type="text"
               name="phone"
               value={form.phone}
               onChange={handleChange}
               placeholder="Phone Number"
-              className="bg-[var(--card-soft)] text-[var(--text)] px-4 py-2.5 rounded-md outline-none"
+              className="bg-[var(--card-soft)] text-[var(--text)] px-4 py-3 rounded-md outline-none border border-transparent focus:border-[var(--primary)] transition"
             />
 
             <input
+              type="text"
               name="service"
               value={form.service}
               onChange={handleChange}
               placeholder="What consultancy service do you want?"
-              className="bg-[var(--card-soft)] text-[var(--text)] px-4 py-2.5 rounded-md outline-none"
+              className="bg-[var(--card-soft)] text-[var(--text)] px-4 py-3 rounded-md outline-none border border-transparent focus:border-[var(--primary)] transition"
             />
 
             <textarea
@@ -156,13 +169,13 @@ export default function Contact() {
               onChange={handleChange}
               rows="4"
               placeholder="Message"
-              className="bg-[var(--card-soft)] text-[var(--text)] px-4 py-2.5 rounded-md outline-none resize-none"
+              className="bg-[var(--card-soft)] text-[var(--text)] px-4 py-3 rounded-md outline-none resize-none border border-transparent focus:border-[var(--primary)] transition"
             />
 
             <button
               type="submit"
               disabled={loading}
-              className="py-2.5 rounded-full text-white bg-btn-light dark:bg-btn-dark hover:opacity-90 transition"
+              className="py-3 rounded-full text-white bg-btn-light dark:bg-btn-dark hover:opacity-90 transition duration-300 disabled:opacity-60"
             >
               {loading ? "Sending..." : "Submit"}
             </button>

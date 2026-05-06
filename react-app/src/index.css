@@ -6,6 +6,7 @@
   --bg: #f0f0f0;
   --bg-secondary: #ffffff;
   --primary: #42B9F4;
+  --button-soft: #ffffff;
   --special-text: #42B9F4;
   --text: #000000;
   --text-muted: #4b5563;
@@ -23,6 +24,7 @@
   --bg: #01050e;
   --bg-secondary: #030614;
   --card: #0b1220;
+  --button-soft: #252832;
   --card-soft: #252832;
   --text: #ffffff;
   --text-muted: #9ca3af;

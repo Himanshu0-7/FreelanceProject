@@ -6,22 +6,27 @@ const services = [
     title: "ServiceNow Solutions",
     desc: "End to end ServiceNow services including ITSM, ITOM, HRSD, and workflow automation to enhance organizational productivity and service delivery.",
   },
+
   {
     title: "Salesforce Services",
     desc: "Comprehensive Salesforce solutions including CRM implementation, customization, automation, and third party integrations to improve customer engagement and revenue growth.",
   },
+
   {
     title: "DevOps and Cloud Engineering",
     desc: "We design and implement robust DevOps pipelines and cloud infrastructure to enable faster deployments, continuous integration, and reliable system performance across environments.",
   },
+
   {
     title: "Agentic AI and Generative AI",
     desc: "We build advanced AI driven systems that enable intelligent automation, autonomous decision making, and enhanced user experiences. Our solutions include AI agents, chatbots, workflow automation, and data driven insights.",
   },
+
   {
     title: "Cybersecurity and Risk Management",
     desc: "Our cybersecurity services focus on proactive threat detection, risk assessment, compliance management, and data protection to safeguard critical business assets.",
   },
+
   {
     title: "Global Capability Centers (GCC)",
     desc: "We help organizations establish and manage global capability centers, enabling cost efficiency, access to skilled talent, and scalable operations.",
@@ -32,73 +37,82 @@ export default function WhatWeDo() {
   const [index, setIndex] = useState(0);
 
   const next = () => setIndex((prev) => (prev + 1) % services.length);
+
   const prev = () =>
     setIndex((prev) => (prev === 0 ? services.length - 1 : prev - 1));
 
   return (
-    <section className="relative w-full h-[500px] md:h-[800px] overflow-hidden">
+    <section className="relative w-full min-h-[650px] md:min-h-[800px] overflow-hidden">
       {/* Background */}
       <img
         src={whatwedo_img}
         alt="team"
         className="absolute inset-0 w-full h-full object-cover"
       />
+
       {/* Overlay */}
-      <div className="absolute inset-0 bg-black/30 dark:bg-black/50"></div>
+      <div className="absolute inset-0 bg-black/40 dark:bg-black/60" />
 
-      {/* Content Card — fixed height with internal layout, no overflow push */}
-      <div
-        className="absolute right-6 md:right-16 top-1/2 -translate-y-1/2 
-        bg-[var(--card)] text-[var(--text)] 
-        p-6 md:p-8 rounded-2xl w-[300px] md:w-[550px]
-        shadow-xl h-[280px] md:h-[300px] flex flex-col justify-between"
-      >
-        <div>
-          <h2 className="text-xl md:text-4xl font-semibold mb-4 text-[var(--primary)]">
-            What We Do
-          </h2>
-          {/* Inner Box — fixed height with scroll if needed */}
-          <div className="bg-[var(--card-bg)] p-4 rounded-lg backdrop-blur-sm h-[120px] md:h-[130px] overflow-y-auto">
-            <h3 className="font-semibold text-sm md:text-lg mb-2">
-              {services[index].title}
-            </h3>
-            <p className="text-xs md:text-sm text-[var(--text-muted)]">
-              {services[index].desc}
-            </p>
+      {/* Content */}
+      <div className="relative z-10 w-full h-full flex items-center justify-center md:justify-end px-6 md:px-16 py-16">
+        <div
+          className="bg-[var(--card)] text-[var(--text)] 
+          p-6 md:p-8 rounded-2xl w-full max-w-[550px]
+          shadow-2xl border border-[var(--border)]
+          flex flex-col justify-between min-h-[340px] md:min-h-[360px]"
+        >
+          {/* Top */}
+          <div>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold mb-5 text-[var(--primary)]">
+              What We Do
+            </h2>
+
+            {/* Inner Box */}
+            <div className="bg-[var(--card-bg)] p-4 sm:p-5 rounded-xl backdrop-blur-sm min-h-[150px] md:min-h-[170px] overflow-y-auto border border-[var(--border)]">
+              <h3 className="font-semibold text-base sm:text-lg mb-3 text-[var(--text)] leading-relaxed">
+                {services[index].title}
+              </h3>
+
+              <p className="text-sm sm:text-base text-[var(--text-muted)] leading-relaxed">
+                {services[index].desc}
+              </p>
+            </div>
           </div>
-        </div>
 
-        {/* Bottom: dots + nav always pinned */}
-        <div className="flex flex-col items-center gap-3 mt-2">
-          {/* Dot indicators */}
-          <div className="flex justify-center gap-2">
-            {services.map((_, i) => (
+          {/* Bottom */}
+          <div className="flex flex-col items-center gap-4 mt-6">
+            {/* Dots */}
+            <div className="flex justify-center gap-2 flex-wrap">
+              {services.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => setIndex(i)}
+                  className={`h-2 rounded-full transition-all duration-300 ${i === index
+                      ? "bg-[var(--primary)] w-5"
+                      : "bg-[var(--text-muted)] opacity-50 w-2"
+                    }`}
+                />
+              ))}
+            </div>
+
+            {/* Nav */}
+            <div className="flex justify-between items-center gap-6 bg-[var(--card-soft)] w-full max-w-[260px] py-2 px-3 rounded-full shadow-lg border border-[var(--border)]">
               <button
-                key={i}
-                onClick={() => setIndex(i)}
-                className={`h-2 rounded-full transition-all duration-300 ${i === index
-                    ? "bg-[var(--primary)] w-4"
-                    : "bg-[var(--text-muted)] opacity-50 w-2"
-                  }`}
-              />
-            ))}
-          </div>
-          {/* Nav buttons */}
-          <div className="flex justify-between gap-6 bg-[var(--card-soft)] w-[250px] py-2 rounded-full shadow-lg">
-            <button
-              onClick={prev}
-              className="w-12 h-12 flex items-center justify-center rounded-full 
-              bg-[var(--card-bg)] text-[var(--text)] hover:opacity-80 transition"
-            >
-              ←
-            </button>
-            <button
-              onClick={next}
-              className="w-12 h-12 flex items-center justify-center rounded-full 
-              bg-[var(--card-bg)] text-[var(--text)] hover:opacity-80 transition"
-            >
-              →
-            </button>
+                onClick={prev}
+                className="w-12 h-12 flex items-center justify-center rounded-full 
+                bg-[var(--card-bg)] text-[var(--text)] hover:opacity-80 transition duration-300"
+              >
+                ←
+              </button>
+
+              <button
+                onClick={next}
+                className="w-12 h-12 flex items-center justify-center rounded-full 
+                bg-[var(--card-bg)] text-[var(--text)] hover:opacity-80 transition duration-300"
+              >
+                →
+              </button>
+            </div>
           </div>
         </div>
       </div>
