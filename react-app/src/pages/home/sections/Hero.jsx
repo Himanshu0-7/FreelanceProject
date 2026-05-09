@@ -291,7 +291,10 @@ export default function Hero() {
           </p>
 
           <div className="flex flex-wrap gap-4">
-            <button className="bg-btn-light dark:bg-btn-dark px-5 py-2.5 sm:px-6 sm:py-3 rounded-full text-white font-semibold transition duration-300 hover:opacity-90">
+            <button
+              onClick={() => navigate("/services")}
+              className="bg-btn-light dark:bg-btn-dark px-5 py-2.5 sm:px-6 sm:py-3 rounded-full text-white font-semibold transition duration-300 hover:opacity-90"
+            >
               Our Services
             </button>
 
