@@ -16,7 +16,7 @@ const services = [
   { title: "Global Capability Centers (GCC)", img: img3, slug: "gcc" },
 ];
 
-export default function ExploreServices() {
+export default function ExploreServices({ servicesRef }) {
   const navigate = useNavigate();
 
   return (
@@ -28,7 +28,10 @@ export default function ExploreServices() {
         </h2>
 
         {/* Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-10 gap-y-16">
+        <div
+          ref={servicesRef}
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-10 gap-y-16"
+        >
           {services.map((item, index) => (
             <div
               key={index}

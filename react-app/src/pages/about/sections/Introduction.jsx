@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import Person from "../../../assets/personImg.png";
 
-export default function Introduction() {
+export default function Introduction({ scrollToServices }) {
   const navigate = useNavigate();
 
   const stats = [
@@ -120,7 +120,10 @@ export default function Introduction() {
 
         {/* Buttons */}
         <div className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6 mt-16">
-          <button className="px-8 py-3 rounded-full text-white bg-btn-light dark:bg-btn-dark hover:opacity-90 transition duration-300">
+          <button
+            onClick={scrollToServices}
+            className="px-8 py-3 rounded-full text-white bg-btn-light dark:bg-btn-dark hover:opacity-90 transition duration-300"
+          >
             Explore Our Services
           </button>
 
