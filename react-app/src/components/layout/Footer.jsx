@@ -50,9 +50,8 @@ export default function Footer() {
             <img
               src={Logo}
               alt="MSNG Logo"
-              className="w-15 h-15 object-contain"
+              className="w-40 h-40 object-contain"
             />
-            <h2 className="text-lg font-semibold">MSNG Technologies</h2>
           </div>
           <p className="font-semibold text-white text-sm leading-relaxed">
             Building smarter, safer, and stronger digital businesses.

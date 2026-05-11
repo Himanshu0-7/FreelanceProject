@@ -70,7 +70,7 @@ const Navbar = () => {
       <div className="w-full flex items-center justify-between px-6 sm:px-10 xl:px-20 h-16">
         {/* Logo */}
         <NavLink to="/">
-          <img src={imgSrc} alt="Logo" className="h-8 sm:h-10 w-auto" />
+          <img src={imgSrc} alt="Logo" className="h-12 sm:h-15 w-auto" />
         </NavLink>
 
         {/* Desktop nav + theme toggle */}
