@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
-import img1 from "../../../assets/about_img3.jpg";
-import img2 from "../../../assets/about_img3.jpg";
+import img1 from "../../../assets/about_img1.jpg";
+import img2 from "../../../assets/about_img2.jpg";
 import img3 from "../../../assets/about_img3.jpg";
 
 export default function About() {
@@ -27,7 +27,7 @@ export default function About() {
             </p>
 
             {/* Large Image */}
-            <div className="w-full sm:w-[550px] h-[250px] sm:h-[350px] rounded-[30px] overflow-hidden">
+            <div className="w-full sm:w-[500px] h-[250px] sm:h-[350px] rounded-[30px] overflow-hidden">
               <img
                 src={img1}
                 alt="MSNG Technologies"
