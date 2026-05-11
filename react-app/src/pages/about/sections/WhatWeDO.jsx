@@ -42,7 +42,7 @@ export default function WhatWeDo() {
     setIndex((prev) => (prev === 0 ? services.length - 1 : prev - 1));
 
   return (
-    <section className="relative w-full min-h-[650px] md:min-h-[800px] overflow-hidden">
+    <section className="relative w-full min-h-[650px] md:min-h-[700px] overflow-hidden">
       {/* Background */}
       <img
         src={whatwedo_img}

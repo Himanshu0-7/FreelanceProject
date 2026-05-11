@@ -18,7 +18,7 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section className="w-full py-20 sm:py-24 overflow-hidden bg-gradient-270-light dark:bg-gradient-270-dark">
+    <section className="w-full py-20 sm:py-18 overflow-hidden bg-gradient-270-light dark:bg-gradient-270-dark">
       <div className="max-w-[1400px] mx-auto px-6 md:px-10">
         {/* Heading */}
         <h2 className="text-center text-3xl sm:text-4xl md:text-5xl font-semibold text-[var(--primary)] mb-16">
@@ -42,7 +42,7 @@ export default function Testimonials() {
               `}
             >
               {/* Quote */}
-              <p className="text-[var(--text-muted)] text-base sm:text-lg lg:text-xl leading-relaxed mb-8">
+              <p className="text-[var(--text-muted)] text-base sm:text-lg lg:text-xl leading-relaxed mb-4">
                 “{item.text}”
               </p>
 

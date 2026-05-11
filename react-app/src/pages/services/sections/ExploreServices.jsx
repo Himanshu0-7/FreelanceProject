@@ -1,7 +1,10 @@
 import { useNavigate } from "react-router-dom";
-import img1 from "../../../assets/exploreServices_img.png";
-import img2 from "../../../assets/exploreServices_img2.jpg";
-import img3 from "../../../assets/exploreServices_img3.jpg";
+import img1 from "../../../assets/SalesNow.png";
+import img2 from "../../../assets/SalesForce.png";
+import img3 from "../../../assets/Devops_img.png";
+import img4 from "../../../assets/agentic_ai_img.png";
+import img5 from "../../../assets/CyberSecurity_img.png";
+import img6 from "../../../assets/gcc_img.png";
 
 const services = [
   {
@@ -24,19 +27,19 @@ const services = [
 
   {
     title: "Agentic AI and Generative AI",
-    img: img1,
+    img: img4,
     slug: "agentic-ai",
   },
 
   {
     title: "Cybersecurity and Risk Management",
-    img: img2,
+    img: img5,
     slug: "cybersecurity",
   },
 
   {
     title: "Global Capability Centers (GCC)",
-    img: img3,
+    img: img6,
     slug: "gcc",
   },
 ];

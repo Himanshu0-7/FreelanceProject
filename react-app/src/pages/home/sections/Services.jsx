@@ -1,13 +1,45 @@
 import { useNavigate } from "react-router-dom";
 import Background from "../../../assets/Background.png";
 
+// Service Images
+import ServiceNowImg from "../../../assets/SalesNow.png";
+import SalesforceImg from "../../../assets/SalesForce.png";
+import DevOpsImg from "../../../assets/Devops_img.png";
+import AIImg from "../../../assets/agentic_ai_img.png";
+import CyberImg from "../../../assets/CyberSecurity_img.png";
+import GCCImg from "../../../assets/gcc_img.png";
+
 const services = [
-  { title: "ServiceNow Solutions", slug: "servicenow" },
-  { title: "Salesforce Services", slug: "salesforce" },
-  { title: "DevOps and Cloud Engineering", slug: "devops" },
-  { title: "Agentic AI and Generative AI", slug: "agentic-ai" },
-  { title: "Cybersecurity and Risk Management", slug: "cybersecurity" },
-  { title: "Global Capability Centers (GCC)", slug: "gcc" },
+  {
+    title: "ServiceNow Solutions",
+    slug: "servicenow",
+    image: ServiceNowImg,
+  },
+  {
+    title: "Salesforce Services",
+    slug: "salesforce",
+    image: SalesforceImg,
+  },
+  {
+    title: "DevOps and Cloud Engineering",
+    slug: "devops",
+    image: DevOpsImg,
+  },
+  {
+    title: "Agentic AI and Generative AI",
+    slug: "agentic-ai",
+    image: AIImg,
+  },
+  {
+    title: "Cybersecurity and Risk Management",
+    slug: "cybersecurity",
+    image: CyberImg,
+  },
+  {
+    title: "Global Capability Centers (GCC)",
+    slug: "gcc",
+    image: GCCImg,
+  },
 ];
 
 export default function Services() {
@@ -27,6 +59,7 @@ export default function Services() {
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-[var(--special-text)]">
           Our <span className="text-[var(--primary)]">Services</span>
         </h1>
+
         <p className="text-[var(--text-muted)] text-center mt-4 text-sm sm:text-base leading-relaxed">
           Our services are built to support digital transformation and long-term
           success. We provide expert consulting, scalable technology solutions,
@@ -40,17 +73,26 @@ export default function Services() {
           <div key={index} className="flex justify-center">
             <div
               onClick={() => navigate(`/services/${service.slug}`)}
-              className="relative w-full max-w-[320px] h-[260px] sm:h-[300px] rounded-2xl overflow-visible bg-[var(--card)] cursor-pointer group"
+              className="relative w-full max-w-[320px] h-[260px] sm:h-[300px] overflow-visible cursor-pointer group"
             >
-              {/* Gradient overlay */}
-              <div className="absolute inset-0 rounded-2xl bg-gradient-to-t from-black/60 to-transparent group-hover:from-black/80 transition duration-300" />
+              {/* Image Wrapper */}
+              <div className="w-full h-full rounded-2xl overflow-hidden relative">
+                {/* Service Image */}
+                <img
+                  src={service.image}
+                  alt={service.title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                />
 
-              {/* Label button */}
+                {/* Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+              </div>
+
+              {/* Label */}
               <div
                 className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2
-                w-[220px] py-2.5 sm:py-3 rounded-xl text-white text-sm sm:text-base
-                bg-btn-light dark:bg-btn-dark text-center px-4
-                group-hover:opacity-90 transition duration-300"
+    w-[220px] py-2.5 sm:py-3 rounded-xl text-white text-sm sm:text-base
+    bg-btn-light dark:bg-btn-dark text-center px-4 z-20"
               >
                 {service.title}
               </div>
@@ -67,6 +109,7 @@ export default function Services() {
         >
           Explore All Services →
         </button>
+
         <button
           onClick={() => navigate("/contact")}
           className="px-8 sm:px-10 py-3 sm:py-4 rounded-full font-semibold bg-[var(--card)] text-[var(--text)] hover:opacity-90 transition duration-300"

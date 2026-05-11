@@ -8,7 +8,7 @@ export default function ServicesHero() {
         <img src={heroImg} alt="" className="w-full h-full object-cover" />
 
         {/* Overlay */}
-        <div className="absolute inset-0 bg-black/30 dark:bg-black/50" />
+        <div className="absolute inset-0 bg-black/10 dark:bg-black/10" />
 
         {/* Floating Card */}
         <div

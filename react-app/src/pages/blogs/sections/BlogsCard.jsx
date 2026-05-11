@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
-import img from "../../../assets/blog_img.png";
+import img1 from "../../../assets/Blog_img1.png";
+import img2 from "../../../assets/Blog_img2.png";
 
 const blogs = [
   {
@@ -8,14 +9,14 @@ const blogs = [
       "Transforming Enterprises Through Intelligent Automation and Innovation",
     desc: "Generative AI has rapidly evolved from a futuristic concept into a transformative force reshaping industries worldwide. Organizations are adopting AI driven solutions to streamline operations and unlock new opportunities.",
     tag: "Generative AI",
-    img: img,
+    img: img1,
   },
   {
     slug: "cybersecurity",
     title: "Protecting Modern Enterprises Against Evolving Threats",
     desc: "As businesses accelerate digital transformation, cybersecurity has become one of the most critical priorities. From cloud infrastructure to AI powered systems, modern enterprises face increasing cyber threats.",
     tag: "Cybersecurity",
-    img: img,
+    img: img2,
   },
 ];
 
@@ -30,7 +31,7 @@ export default function BlogCards({ query }) {
   );
 
   return (
-    <section className="w-full py-10 sm:py-16 overflow-hidden bg-gradient-90-light dark:bg-gradient-90-dark">
+    <section className="w-full py-10 sm:py-5 overflow-hidden bg-gradient-90-light dark:bg-gradient-90-dark">
       <div className="max-w-[1400px] mx-auto px-6 md:px-10">
         {filtered.length === 0 ? (
           <div className="text-center py-20">

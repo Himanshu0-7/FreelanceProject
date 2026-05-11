@@ -1,26 +1,29 @@
 import { useNavigate } from "react-router-dom";
-import img1 from "../../../assets/exploreServices_img.png";
-import img2 from "../../../assets/exploreServices_img2.jpg";
-import img3 from "../../../assets/exploreServices_img3.jpg";
+import img1 from "../../../assets/SalesNow.png";
+import img2 from "../../../assets/SalesForce.png";
+import img3 from "../../../assets/Devops_img.png";
+import img4 from "../../../assets/agentic_ai_img.png";
+import img5 from "../../../assets/CyberSecurity_img.png";
+import img6 from "../../../assets/gcc_img.png";
 
 const services = [
   { title: "ServiceNow Solutions", img: img1, slug: "servicenow" },
   { title: "Salesforce Services", img: img2, slug: "salesforce" },
   { title: "DevOps and Cloud Engineering", img: img3, slug: "devops" },
-  { title: "Agentic AI and Generative AI", img: img1, slug: "agentic-ai" },
+  { title: "Agentic AI and Generative AI", img: img4, slug: "agentic-ai" },
   {
     title: "Cybersecurity and Risk Management",
-    img: img2,
+    img: img5,
     slug: "cybersecurity",
   },
-  { title: "Global Capability Centers (GCC)", img: img3, slug: "gcc" },
+  { title: "Global Capability Centers (GCC)", img: img6, slug: "gcc" },
 ];
 
 export default function ExploreServices({ servicesRef }) {
   const navigate = useNavigate();
 
   return (
-    <section className="w-full py-20 sm:py-28 lg:py-36 overflow-hidden bg-gradient-270-light dark:bg-gradient-270-dark">
+    <section className="w-full pt-5 sm:pt-12 lg:pt-16 pb-10 sm:pb-18 lg:pb-16 overflow-hidden bg-gradient-270-light dark:bg-gradient-270-dark">
       <div className="max-w-[1400px] mx-auto px-6 md:px-10">
         {/* Heading */}
         <h2 className="text-center text-3xl sm:text-4xl md:text-5xl font-semibold text-[var(--primary)] mb-16 sm:mb-20">

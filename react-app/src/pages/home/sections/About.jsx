@@ -1,19 +1,19 @@
 import { useNavigate } from "react-router-dom";
-import img1 from "../../../assets/about_img1.jpg";
-import img2 from "../../../assets/about_img2.jpg";
-import img3 from "../../../assets/about_img3.jpg";
+import img1 from "../../../assets/AboutUS_img1.png";
+import img2 from "../../../assets/AboutUS_img2.png";
+import img3 from "../../../assets/AboutUS_img3.png";
 
 export default function About() {
   const navigate = useNavigate();
 
   return (
-    <section className="relative bg-gradient-47-light dark:bg-gradient-47-dark w-full min-h-dvh pt-10 pb-20 flex justify-center px-6 sm:px-10 lg:px-16 overflow-hidden">
+    <section className="relative bg-gradient-47-light dark:bg-gradient-47-dark w-full min-h-dvh pt-10 flex justify-center px-6 sm:px-10 lg:px-14 overflow-hidden">
       <section className="w-full max-w-[1200px]">
         <h1 className="font-semibold text-[var(--text)] text-4xl sm:text-5xl lg:text-6xl text-center">
           About <span className="text-[var(--primary)]">Us</span>
         </h1>
 
-        <section className="flex flex-col lg:flex-row gap-10 mt-10 pt-10 lg:pt-20">
+        <section className="flex flex-col lg:flex-row gap-10 mt-5 pt-5 lg:pt-10">
           <div className="flex flex-col gap-10 w-full lg:max-w-[550px]">
             <p className="text-[var(--text)] text-lg sm:text-xl leading-relaxed">
               <span className="text-[var(--special-text)] font-semibold">

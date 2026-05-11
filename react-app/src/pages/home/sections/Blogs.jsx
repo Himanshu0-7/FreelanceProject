@@ -1,32 +1,25 @@
 import { useNavigate } from "react-router-dom";
+import img1 from "../../../assets/Blog_img1.png";
+import img2 from "../../../assets/Blog_img2.png";
 
 export default function Blogs() {
   const navigate = useNavigate();
 
   const blogs = [
     {
-      title: "What is Agentic AI",
-      desc: "Here are strong, professional texts for the Our Services section of your MS TECH consultancy website....",
-      img: "/img2.jpg",
-      tag: "AGENTIC AI",
+      slug: "generative-ai",
+      title:
+        "Transforming Enterprises Through Intelligent Automation and Innovation",
+      desc: "Generative AI has rapidly evolved from a futuristic concept into a transformative force reshaping industries worldwide. Organizations are adopting AI driven solutions to streamline operations and unlock new opportunities.",
+      tag: "Generative AI",
+      img: img1,
     },
     {
-      title: "What is Generative AI",
-      desc: "Here are strong, professional texts for the Our Services section of your MS TECH consultancy website....",
-      img: "/img1.jpg",
-      tag: "GENERATIVE AI",
-    },
-    {
-      title: "What is Cyber Security",
-      desc: "Here are strong, professional texts for the Our Services section of your MS TECH consultancy website....",
-      img: "/img3.jpg",
-      tag: "CYBER SECURITY",
-    },
-    {
-      title: "What is Agentic AI",
-      desc: "Here are strong, professional texts for the Our Services section of your MS TECH consultancy website....",
-      img: "/img2.jpg",
-      tag: "AGENTIC AI",
+      slug: "cybersecurity",
+      title: "Protecting Modern Enterprises Against Evolving Threats",
+      desc: "As businesses accelerate digital transformation, cybersecurity has become one of the most critical priorities. From cloud infrastructure to AI powered systems, modern enterprises face increasing cyber threats.",
+      tag: "Cybersecurity",
+      img: img2,
     },
   ];
 
@@ -43,52 +36,49 @@ export default function Blogs() {
         and grow as an individual
       </p>
 
-      {/* Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mt-12 sm:mt-16 w-full max-w-[1200px]">
-        {blogs.map((blog, index) => (
+      {/* Blog Cards */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10 mt-14 w-full max-w-[1000px] mx-auto">
+        {blogs.map((item, index) => (
           <div
             key={index}
-            className="bg-[var(--card)] rounded-2xl overflow-hidden w-full transition duration-300 hover:-translate-y-1"
+            className="bg-[var(--card)] p-4 rounded-2xl shadow-lg border border-[var(--border)] hover:-translate-y-2 transition duration-300 flex flex-col cursor-pointer"
+            onClick={() => navigate(`/blogs/${item.slug}`)}
           >
             {/* Image */}
-            <div className="relative h-[180px] overflow-hidden">
+            <div className="rounded-xl overflow-hidden mb-5">
               <img
-                src={blog.img}
-                alt={blog.title}
-                className="w-full h-full object-cover"
+                src={item.img}
+                alt={item.title}
+                className="w-full h-[180px] sm:h-[200px] object-cover transition duration-500 hover:scale-105"
               />
-
-              {/* Tag badge */}
-              <div className="absolute bottom-3 left-1/2 -translate-x-1/2 bg-black/50 backdrop-blur-sm text-white text-xs font-semibold px-3 py-1 rounded-full whitespace-nowrap">
-                {blog.tag}
-              </div>
             </div>
 
             {/* Content */}
-            <div className="p-4 flex flex-col">
-              <h3 className="text-[var(--text)] font-semibold text-base sm:text-lg leading-snug">
-                {blog.title}
+            <div className="flex flex-col flex-1">
+              <span className="bg-[var(--primary)]/20 text-[var(--primary)] text-xs px-3 py-1 rounded-full whitespace-nowrap w-fit mb-3">
+                {item.tag}
+              </span>
+
+              <h3 className="text-[var(--text)] text-xl font-semibold mb-3 leading-relaxed">
+                {item.title}
               </h3>
 
-              <p className="text-[var(--text-muted)] text-sm mt-2 line-clamp-3 leading-relaxed">
-                {blog.desc}
+              <p className="text-[var(--text-muted)] text-sm sm:text-base leading-relaxed mb-6 flex-1">
+                {item.desc}
               </p>
 
-              <button
-                onClick={() => navigate("/blogs")}
-                className="mt-4 w-fit px-4 py-2 rounded-full text-white text-sm bg-btn-light dark:bg-btn-dark hover:opacity-90 transition duration-300"
-              >
-                Learn More →
-              </button>
+              <span className="text-[var(--primary)] text-sm sm:text-base hover:opacity-80 transition">
+                Read More →
+              </span>
             </div>
           </div>
         ))}
       </div>
 
-      {/* View all button */}
+      {/* Button */}
       <button
         onClick={() => navigate("/blogs")}
-        className="mt-12 sm:mt-16 px-8 py-3 rounded-full text-white transition duration-300 bg-btn-light dark:bg-btn-dark hover:opacity-90"
+        className="mt-14 px-8 py-3 rounded-full text-white transition duration-300 bg-btn-light dark:bg-btn-dark hover:opacity-90"
       >
         View All Blogs
       </button>
