@@ -7,7 +7,7 @@ export default function About() {
   const navigate = useNavigate();
 
   return (
-    <section className="relative bg-gradient-47-light dark:bg-gradient-47-dark w-full min-h-dvh pt-10 flex justify-center px-6 sm:px-10 lg:px-14 overflow-hidden">
+    <section className="relative bg-gradient-47-light dark:bg-gradient-47-dark w-full min-h-dvh pt-10 pb-5 flex justify-center px-6 sm:px-10 lg:px-16 overflow-hidden">
       <section className="w-full max-w-[1200px]">
         <h1 className="font-semibold text-[var(--text)] text-4xl sm:text-5xl lg:text-6xl text-center">
           About <span className="text-[var(--primary)]">Us</span>
