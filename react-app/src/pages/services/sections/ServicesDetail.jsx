@@ -248,6 +248,98 @@ export default function ServiceDetail() {
           </div>
         </div>
 
+        {/* CASE STUDY */}
+        {service.caseStudy && (
+          <div className="flex flex-col gap-8">
+            <div>
+              <span className="text-xs font-semibold uppercase tracking-widest text-[var(--primary)] mb-3 block">
+                Case Study
+              </span>
+              <h2 className="text-3xl md:text-4xl font-semibold text-[var(--text)]">
+                MSNG's Real World{" "}
+                <span className="text-[var(--primary)]">Impact</span>
+              </h2>
+            </div>
+
+            {/* Overview card */}
+            <div className="relative bg-[var(--card-bg)] rounded-3xl p-6 sm:p-8 border border-[var(--border)] overflow-hidden">
+              <div className="absolute top-0 left-0 w-1.5 h-full rounded-l-3xl bg-[var(--primary)]" />
+              <div className="pl-4">
+                <span className="text-xs font-semibold uppercase tracking-widest text-[var(--primary)] mb-2 block">
+                  Industry
+                </span>
+                <h3 className="text-xl font-semibold text-[var(--text)] mb-4">
+                  {service.caseStudy.industry}
+                </h3>
+                <p className="text-[var(--text-muted)] text-sm sm:text-base leading-relaxed">
+                  {service.caseStudy.overview}
+                </p>
+              </div>
+            </div>
+
+            {/* Results — stat cards */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              {service.caseStudy.results.map((result, i) => (
+                <div
+                  key={i}
+                  className="bg-[var(--card)] rounded-2xl p-6 text-center border border-[var(--border)]"
+                >
+                  <p className="text-3xl sm:text-4xl font-bold text-[var(--primary)] mb-2">
+                    {result.value}
+                  </p>
+                  <p className="text-[var(--text-muted)] text-xs sm:text-sm leading-relaxed">
+                    {result.label}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            {/* Challenges + Solutions */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {/* Challenges */}
+              <div className="bg-[var(--card-bg)] rounded-3xl p-6 sm:p-8 border border-[var(--border)]">
+                <h3 className="text-xs font-semibold uppercase tracking-widest text-red-400 mb-4">
+                  Challenges
+                </h3>
+                <div className="flex flex-col gap-2">
+                  {service.caseStudy.challenges.map((item, i) => (
+                    <div
+                      key={i}
+                      className="flex items-start gap-3 bg-[var(--card)] rounded-xl px-4 py-3 border border-[var(--border)]"
+                    >
+                      <span className="text-red-400 mt-0.5 shrink-0">✕</span>
+                      <p className="text-[var(--text-muted)] text-sm leading-relaxed">
+                        {item}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Solutions */}
+              <div className="bg-[var(--card-bg)] rounded-3xl p-6 sm:p-8 border border-[var(--border)]">
+                <h3 className="text-xs font-semibold uppercase tracking-widest text-[var(--primary)] mb-4">
+                  Our Solutions
+                </h3>
+                <div className="flex flex-col gap-2">
+                  {service.caseStudy.solutions.map((item, i) => (
+                    <div
+                      key={i}
+                      className="flex items-start gap-3 bg-[var(--card)] rounded-xl px-4 py-3 border border-[var(--border)]"
+                    >
+                      <span className="text-[var(--primary)] mt-0.5 shrink-0">
+                        ✓
+                      </span>
+                      <p className="text-[var(--text-muted)] text-sm leading-relaxed">
+                        {item}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
         {/* ENQUIRY FORM */}
         <div className="relative bg-[var(--card-bg)] rounded-3xl p-8 sm:p-10 border border-[var(--border)] overflow-hidden">
           <div className="absolute top-0 left-0 w-1.5 h-full rounded-l-3xl bg-[var(--primary)]" />

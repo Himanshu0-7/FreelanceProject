@@ -266,23 +266,15 @@ export default function Hero() {
             #1 in the Consultancy
           </p>
 
-          <h1
-            className="font-bold leading-tight"
-            style={{
-              fontSize: "clamp(2.5rem, 4vw, 4.5rem)",
-            }}
-          >
-            <span className="block whitespace-nowrap">
+          <h1 className="font-bold leading-tight">
+            <span className="block whitespace-nowrap text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl">
               Innovative IT Consulting For
             </span>
 
             <span
               ref={textRef}
-              className="block mt-2 "
-              style={{
-                fontSize: "clamp(1.8rem, 3vw, 3.5rem)",
-                minHeight: "60px",
-              }}
+              className="block mt-2 text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl"
+              style={{ minHeight: "60px" }}
             />
           </h1>
           <p className="text-[var(--text-muted)] mb-4 mt-8 text-sm sm:text-base">

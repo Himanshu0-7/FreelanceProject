@@ -45,6 +45,31 @@ const servicesData = [
       "Scalable solutions for enterprise needs",
       "Focus on performance and usability",
     ],
+    caseStudy: {
+      industry: "Mid Size IT Enterprise",
+      overview:
+        "A growing IT enterprise was facing operational inefficiencies due to manual ticket handling processes, delayed response times, and limited visibility into service performance. The existing support workflow lacked automation, resulting in increased workload on IT teams and inconsistent service delivery.",
+      challenges: [
+        "Manual ticket assignment and tracking",
+        "Slow incident resolution times",
+        "Lack of workflow automation",
+        "Limited reporting and visibility",
+        "Increasing pressure on support teams",
+      ],
+      solutions: [
+        "Automated incident and request workflows",
+        "SLA based ticket tracking and escalation",
+        "Centralized service management dashboard",
+        "Workflow optimization and process automation",
+        "Enhanced reporting and analytics capabilities",
+      ],
+      results: [
+        { value: "40%", label: "Faster ticket resolution" },
+        { value: "60%", label: "Reduction in manual workload" },
+        { value: "↑", label: "Improved user satisfaction" },
+        { value: "↑", label: "Enhanced team productivity" },
+      ],
+    },
   },
   {
     slug: "salesforce",
@@ -92,6 +117,31 @@ const servicesData = [
       "Seamless integrations",
       "Scalable and secure solutions",
     ],
+    caseStudy: {
+      industry: "Retail and eCommerce Brand",
+      overview:
+        "A rapidly growing retail and eCommerce company struggled with fragmented customer data, inefficient lead management, and limited visibility into customer journeys. Their disconnected systems made it difficult to track conversions and optimize sales processes.",
+      challenges: [
+        "Disconnected customer databases",
+        "Inefficient lead tracking",
+        "Limited conversion visibility",
+        "Lack of integrated marketing automation",
+        "Inconsistent sales forecasting",
+      ],
+      solutions: [
+        "Centralized customer relationship management",
+        "Automated lead and sales pipelines",
+        "Marketing platform integration",
+        "Real time reporting and analytics",
+        "Customized dashboards and forecasting tools",
+      ],
+      results: [
+        { value: "35%", label: "Increase in lead conversion" },
+        { value: "↑", label: "Unified customer view" },
+        { value: "↑", label: "Improved sales forecasting" },
+        { value: "↑", label: "Streamlined sales processes" },
+      ],
+    },
   },
   {
     slug: "devops",
@@ -139,6 +189,31 @@ const servicesData = [
       "Focus on automation and efficiency",
       "Reliable and scalable solutions",
     ],
+    caseStudy: {
+      industry: "SaaS Company",
+      overview:
+        "A SaaS company faced challenges with slow deployment cycles, frequent downtime, and inconsistent release management processes. Manual deployment methods were affecting product delivery timelines and overall system reliability.",
+      challenges: [
+        "Slow software deployment cycles",
+        "Frequent production downtime",
+        "Manual release management processes",
+        "Limited deployment visibility",
+        "Scalability concerns",
+      ],
+      solutions: [
+        "CI/CD pipeline implementation",
+        "Automated deployment workflows",
+        "Infrastructure monitoring and optimization",
+        "Cloud based scalability improvements",
+        "Continuous integration and testing automation",
+      ],
+      results: [
+        { value: "70%", label: "Faster release cycles" },
+        { value: "50%", label: "Reduction in downtime" },
+        { value: "↑", label: "Improved deployment reliability" },
+        { value: "↑", label: "Enhanced scalability" },
+      ],
+    },
   },
   {
     slug: "agentic-ai",
@@ -186,6 +261,31 @@ const servicesData = [
       "Focus on real business outcomes",
       "Strong integration capabilities",
     ],
+    caseStudy: {
+      industry: "Global Customer Support Enterprise",
+      overview:
+        "A global customer support enterprise struggled with high response volumes, repetitive manual workflows, and inconsistent customer experience across multiple communication channels. The organization required an intelligent automation solution capable of improving response efficiency while maintaining service quality at scale.",
+      challenges: [
+        "High volume of repetitive customer queries",
+        "Slow response and resolution times",
+        "Increasing operational costs",
+        "Inconsistent support experiences across channels",
+        "Limited scalability during peak demand periods",
+      ],
+      solutions: [
+        "AI powered virtual support agents",
+        "Intelligent ticket classification and routing",
+        "Automated response generation and knowledge retrieval",
+        "Context aware customer interaction handling",
+        "Integration with CRM and support platforms",
+      ],
+      results: [
+        { value: "65%", label: "Reduction in response time" },
+        { value: "50%", label: "Decrease in manual workload" },
+        { value: "35%", label: "Improvement in satisfaction" },
+        { value: "24/7", label: "Scalable support availability" },
+      ],
+    },
   },
   {
     slug: "cybersecurity",
@@ -233,6 +333,31 @@ const servicesData = [
       "Compliance focused solutions",
       "End to end security coverage",
     ],
+    caseStudy: {
+      industry: "Financial Services Firm",
+      overview:
+        "A financial services organization faced increasing cybersecurity risks, compliance challenges, and system vulnerabilities due to evolving threat landscapes and regulatory requirements.",
+      challenges: [
+        "High number of security vulnerabilities",
+        "Compliance and regulatory gaps",
+        "Limited threat monitoring capabilities",
+        "Increased operational risk exposure",
+        "Need for continuous security assessment",
+      ],
+      solutions: [
+        "Enterprise security assessment and audit",
+        "Vulnerability identification and remediation",
+        "Security monitoring implementation",
+        "Compliance framework alignment",
+        "Risk mitigation and governance controls",
+      ],
+      results: [
+        { value: "65%", label: "Reduction in vulnerabilities" },
+        { value: "✓", label: "Compliance achieved" },
+        { value: "↑", label: "Improved security posture" },
+        { value: "↑", label: "Enhanced threat visibility" },
+      ],
+    },
   },
   {
     slug: "gcc",
@@ -280,6 +405,31 @@ const servicesData = [
       "Scalable and flexible approach",
       "Focus on long term value creation",
     ],
+    caseStudy: {
+      industry: "US Based Enterprise",
+      overview:
+        "A US based enterprise was experiencing rising operational costs and scalability limitations while expanding its global operations. The organization required a cost effective delivery model with access to skilled talent and scalable operational capabilities.",
+      challenges: [
+        "High operational and staffing costs",
+        "Limited scalability in existing operations",
+        "Resource availability challenges",
+        "Increasing delivery demands",
+        "Need for operational optimization",
+      ],
+      solutions: [
+        "End to end GCC setup and management",
+        "Dedicated operational and delivery teams",
+        "Process optimization and governance",
+        "Scalable infrastructure and workforce model",
+        "Continuous operational support",
+      ],
+      results: [
+        { value: "40%", label: "Operational cost savings" },
+        { value: "↑", label: "Faster delivery cycles" },
+        { value: "↑", label: "Improved scalability" },
+        { value: "↑", label: "Long term expansion support" },
+      ],
+    },
   },
 ];
 
